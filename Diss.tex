@@ -1,0 +1,39 @@
+\documentclass[12pt,titlepage]{report}
+\usepackage{latexsym,graphicx,amsmath,amssymb,graphics,lscape,rotating,fancyhdr,hyperref,setspace,harmony,PDFpages,indentfirst,multicol,multirow,array,makeidx} 
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\pagestyle{plain}
+\linespread{1.7}
+\makeindex
+%\oddsidemargin  0.0in \textwidth      6.5in
+%wasysym,stmaryrd,gensymb,musictex,
+
+\begin{document}
+%\begin{titlepage}
+\author{Andrew Jones}
+\title{Harmony and Statistical Temporality: Jazz Syntax from Corpus Analytics}
+%\includegraphics{Princeton.png}
+\maketitle
+%\include{Thesis_Title}
+\setcounter{page}{1}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+%\include{Diss_Abstract}
+%\newpage
+%\listoftables
+%\newpage
+%\newcommand{\mathsym}[1]{{}}
+%\newcommand{\unicode}{{}}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\include{diss1}%intro, syntax, literature, contra-L&J, setting the stage
+\include{diss_ch_obj}%Chapter 2, on objects, needs a LOT.  Consider Kockelman here, alongside extensive descripton of my key-finding and parsing methods?  (That has to go somewhere, and here seems like the only place)
+\include{diss3}%this is the progressions chapter (based mostly on the ii case study)
+\include{diss4}%this is the bootstrapping progression categories/clustering metrics chapter
+\include{Diss_conclusion}%general (Wollheimian) critique of formalism, description of how my methods escape the critique, affordances and possibilities for syntactic theories like mine
+%\printindex
+%\bibliography{Thesis}
+%\bibliographystyle{plain}
+\end{document}
