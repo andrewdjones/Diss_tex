@@ -70,9 +70,9 @@ In the presence of possible added tones, root determinations may be ambiguous or
 	\label{[0,4,10]}
 \end{figure}
 
-Figure~\ref{[0,4,10]} lists the most frequent voicings with dominant-seventh subsets.  To minimize reductive assumptions about non-harmonic tones, I search through ``salami slices" advocated by Quinn and White, na\"{i}ve verticalities agnostic about which pitches in a given stack should or can be disregarded.\footnote{For a full treatment of salami slice ideology, see Quinn and White [forthcoming].}  As an algorithm thinly ``slices" the YJaMP performance corpus, it tracks each appearance and disappearance of a pitch, treating each resulting verticality as a potential chord, regardless of its pitch content.\footnote{Ira Braus traces Quinn and White's usage of salami slices as musical metaphor back to comments by Ligeti; see Braus 2006.} take the term salami slice The most frequent chord additions match recommendations like those of Figure~\ref{levineextensions} almost precisely: chord tones like root, third, fifth, and seventh are added or doubled; diatonic extensions like 9 and 13 are added; alterations like $\sharp 9$, $\flat 9$, $\sharp 5$, and $\sharp 11$ are common.  The only place where the table of common voicings appears to disagree with received wisdom is in the frequent appearance of $[0,4,10,17]$, an apparent natural 11 chord.
+Figure~\ref{[0,4,10]} lists the most frequent voicings with dominant-seventh subsets.  To minimize reductive assumptions about non-harmonic tones, I search through ``salami slices" advocated by Quinn and White, na\"{i}ve verticalities agnostic about which pitches in a given stack should or can be disregarded.\footnote{For a full treatment of salami slice ideology, see Quinn and White [forthcoming].}  As an algorithm thinly ``slices" the YJaMP performance corpus, it tracks each appearance and disappearance of a pitch, treating each resulting verticality as a potential chord, regardless of its pitch content.\footnote{Ira Braus traces Quinn and White's usage of salami slices as musical metaphor back to comments by Ligeti; see Braus 2006.} The most frequent chord additions match recommendations like those of Figure~\ref{levineextensions} almost precisely: chord tones like root, third, fifth, and seventh are added or doubled; diatonic extensions like 9 and 13 are added; alterations like $\sharp 9$, $\flat 9$, $\sharp 5$, and $\sharp 11$ are common.  The only place where the table of common voicings appears to disagree with received wisdom is in the frequent appearance of $[0,4,10,17]$, an apparent natural 11 chord.  What is the status of this observed sonority?
 
-Levine, among many others, advocates against such sonorities.  Giving an explicit reason to discount this ``unusual" chord (but frequent slice) requires a kind of two-step ideological appeal to reduction like the following:
+Levine, among many others, advocates against the ontological primacy of such sonorities.  Giving an explicit reason to discount this ``unusual" chord (but frequent slice) requires a kind of two-step ideological appeal to reduction like the following:
 \begin{enumerate}
 	\item This chord contains a dissonant or quality-ambiguating minor 9th between its third and eleventh, rendering it problematic and giving it some kind of unstable acoustical status.
 	\item The chord cannot fulfill its usual harmonic function as is: instead, it likely functions as some kind of passing or neighboring chord in the context of a less-problematic, more-normative dominant sonority.
@@ -81,7 +81,7 @@ A corpus-supported analog to step (1) is unclear, and it would likely fall prey 
 
 A corpus of performances can be made to suggest lines of reasoning like (2); a tally of what kinds of voicings tend to follow $[0,4,10,17]$ provides a cursory suggestion as to its use.  If this voicing tends to progress to subsequent harmonies in a way strongly similar to (or different from) other dominant voicings, it may (or may not) stand in for Martin's dominant seventh chord category, despite Levine's intervallic contraindications.
 
-Figure~\ref{[0,4,10,17]} shows the most common voicing salami slices to appear within 50 slices of $[0,4,10,17]$.  Each destination slice is indexed by both its semitonal voicing structure and the number of semitones its bass lies above or below the bass note of $[0,4,10,17]$.  For example, the most common nearby destination slice is the voicing $[0,1,5]$, the seventh, root, and third of a major-seventh chord in registrally-ascending order (see the yellow line in Figure~\ref{[0,4,10,17]}). The seventh of this destination chord (found in the bass) lies a major third above the bass of the preceding $[0,4,10,17]$ chord.  While the slice counting algorithm has made no assumptions of any kind about key, this ``progression" implies traditional root motion down by fifth, indicating that $[0,4,10,17]$ most frequently appears in the context of dominant-tonic motion.  Crucially, this dominant-tonic motion typically occurs on a time scale of many (18-30) slices; during that span, the ``unusual" voicing has plenty of opportunities to ``resolve" to a more normative dominant-seventh, like $[0,4,10,14]$, or a consonant dominant triad, like $[0,16,19]$ (see the blue line in Figure~\ref{[0,4,10,17]}).  Due to the wide variety of destination voicings found after $[0,4,10,17]$, this is comparatively weak support for the two-step reduction outlined above, but it does indicate the form such an appeal might make in corpus analytic terms.
+Figure~\ref{[0,4,10,17]} shows the most common voicing salami slices to appear within 50 slices of $[0,4,10,17]$.\footnote{Note that this flexible span reflects the appearance or disappearance of any single note 50 consecutive times.  At extremely quick tempos or during fast runs, 50 slices could pass in a couple of seconds; at slow tempos or during moments of stasis, the same number of slices might cover tens of seconds (or, formally, an arbitrarily long time).}  Each destination slice is indexed here by both its semitonal voicing structure and the number of semitones its bass lies above or below the bass note of $[0,4,10,17]$.  For example, the most common nearby destination slice is the voicing $[0,1,5]$, the seventh, root, and third of a major-seventh chord in registrally-ascending order (see the yellow line in Figure~\ref{[0,4,10,17]}). The seventh of this destination chord (found in the bass) lies a major third above the bass of the preceding $[0,4,10,17]$ chord (hence the initial 4-semitone entry in the relevant parenthesis).  While the slice counting algorithm has made no assumptions of any kind about key, this ``progression" implies traditional root motion down by fifth, indicating that $[0,4,10,17]$ most frequently appears in the context of dominant-tonic motion.  Crucially, this dominant-tonic motion typically occurs on a time scale of many (18-30) slices; during that span, the ``unusual" voicing has plenty of opportunities to ``resolve" or clarify its status: melodic motion might connect it to a more normative dominant-seventh, like $[0,4,10,14]$, or a consonant dominant triad, like $[0,16,19]$ (see the blue line in Figure~\ref{[0,4,10,17]}).  Due to the wide variety of destination voicings found after $[0,4,10,17]$, this is comparatively weak support for the two-step reduction outlined above, but it does indicate the form such an appeal might take in corpus analytic terms.  An analysis based solely on voicing structure produces an observation defying the properties of the voicing model, so the analyst turns to some behavioralist reduction criteria to normalize the results.
 
 \begin{figure}
 	\centering
@@ -90,9 +90,7 @@ Figure~\ref{[0,4,10,17]} shows the most common voicing salami slices to appear w
 	\label{[0,4,10,17]}
 \end{figure}
 
-%TODO: consider if fuller slice statistics go here, or later?
-
-This procedure relies on a particular type of descriptive and explanatory model, and it still encodes analytical (and ontological) preconceptions regarding chord structure and harmonic progression.  To produce claims of this kind, there must exist a small number of frequently-employed chords of some ideologically-approved structure (i.e., seventh-chords with approved extensions and alterations) and a set of reduction techniques designed to render sounding sonorities of other types analytically (or at least syntactically) unimportant.  As the next section demonstrates, the assumptions of this selection process map onto a flexible semiotic structure given by Paul Kockelman. 
+This procedure relies on a particular type of descriptive and explanatory model, and it still encodes analytical (and ontological) preconceptions regarding chord structure and harmonic progression.  To produce claims of this kind, there must exist a small number of frequently-employed chords of some ideologically-approved structure (i.e., seventh-chords with approved extensions and alterations) and a set of reduction techniques designed to render sounding sonorities of other types analytically (or at least syntactically) unimportant.  Identifying a voicing and deducing the properties of voicing types requires some minimal ontological framing, and other harmonic tasks may or may not be possible within the same frame.
 
 \section{Selecting Objects of Harmonic Significance}
 %Introduce and unpack Kockelman's semiotic diamond
@@ -105,7 +103,7 @@ The analytical pathway from abstract seventh chords to actual voicing statistics
 	\label{kockelman}
 \end{figure}
 
-At the top and bottom corners of this diamond, such music analysis places the abstract chord objects ($O$) postulated as harmonic categories (like Martin's ontologically-basic seventh chords) and the analytical agent seeking to identify, transform, and react to those objects ($A$).  The analyst does not observe the postulated objects directly, but rather through certain traces or signs ($S$) found in the performance data, be it acoustical (for a listening agent or pianist), visual (for a score analyst), or digital (for a corpus analyst).  The analyst observes these signed traces and produces interpretants ($I$) that make sense given the presumed existence of $O$.  These interpretants might be roman numerals that an analyst assigns to particular sonorities to represent the category of harmonic object to which they belong, or they may be expectations regarding subsequent objects which might be sounded in a performance, among other possibilities.
+This figure diagrams a flexible kind of ontological framing for semiotic processes involved in labeling, interpretation, and analysis in general.  At the top and bottom corners of this diamond, music analysis like that of the previous section places the abstract chord objects ($O$) postulated as harmonic categories (like Martin's ontologically-basic seventh chords) and the analytical agent seeking to identify, transform, and react to those objects ($A$).  The analyst does not observe the postulated objects directly, but rather through certain traces or signs ($S$) found in the performance data, be it acoustical (for a listening agent or pianist), visual (for a score analyst), or digital (for a corpus analyst).  The analyst observes these signed traces and produces interpretants ($I$) that make sense given the presumed existence of $O$.  These interpretants might be roman numerals that an analyst assigns to particular sonorities to represent the category of harmonic object to which they belong, or they may be expectations regarding subsequent objects which might be sounded in a performance, among other possibilities.
 
 In a very basic analysis, the analyst might encounter a root-third-seventh voicing like $[0,4,10]$ and interpret it as a sign $S$ for an abstract ``dominant seventh chord" object $O$.  The analyst might then apply a roman numeral interpretant like $V^7$ to a particular location in the score and begin looking for the next syntactically-appropriate chord.  For Kockelman, the interpretant ``makes sense in the context of $S$ from the standpoint of $A$."\footnote{Kockelman 2012, p.\ 17.}  The agent/analyst $A$ selects certain indices $S$ by turning signs into actions.  But Kockelman also describes the properties of the \emph{object} through a parallel and codetermined process: just as the interpretant $I$ makes sense from the standpoint of $A$ in the context of $S$, ``$I$ makes sense in the context of $S$ given the properties of $O$."  The resulting ``relation between relations" underpins semiotic processes of selection and significance, since the sense-making of $I$-given-$S$ requires and produces both a selecting agent and a significant object -- though the ontological structure from which the object $O$ arises can only be accessed, described, or interpreted by $A$ indirectly, through actions based on signs.
 
@@ -160,10 +158,10 @@ Some of the most-maligned limitations of computational methods -- their blessed 
 The remaining sections of this chapter provide examples for how such algorithmic work might ``object"-ify the YJaMP corpus.  Given interpretants designed to operate at different time scales and with different analytical aims, different computational processes are employed to ensure that the interpretant-agent-sign relations are precisely co-generated with the interpretant-object-sign relations.  The categories used to describe harmonic objects in the corpus generate different ontologies in different analytical circumstances.  Statistics regarding voicings and scales suggest future analytical projects based on YJaMP or other corpora, while temporal encodings of scale degree sets lay the groundwork for the generalized harmonic progressions of chapter 3 and the syntactic category formation of chapter 4.
  
 \section{Voicings revisited}
-%TODO: salami slices, voicings in general, now with a touch more ontology?
+%voicings in general, supporting and complicating Levine with more ontology
+To return to the voicing statistics of Figures~\ref{[0,4,10]} and \ref{[0,4,10,17]}, we can now distinguish their different framings.  In the first case, the algorithm-as-analyst produced frequency statistics of different $[0,4,10]$ superset voicings as interpretants.  As a necessary correlate to these statistics, it assumed (or created) an ontology of voicing objects with particular properties: members of the category tallied contain an $[0,4,10]$ pitch subset, where the sounding pitches necessarily overlap in time (though they need not all begin at the same moment).  There are many subtle consequences of this ontology, like the fact that it captures voicings which may not have traditional syntactic significance (like $[0,4,10,17]$), or that a particular voicing might belong to a large number of categories.  Figures~\ref{[0,4,11]} and \ref{[0,3,10]} provide other interpretants from within the same framing: frequently-occurring corpus slices containing $[0,4,11]$ (major seventh) or $[0,3,10]$ (minor seventh) subsets.  These statistics contain further ambiguities of the same kind, but they generally support the added voice instructions given by Levine, among others.
 
-[Note: Figure~\ref{[0,4,11]} and Figure~\ref{[0,3,10]} provide voicing statistics for major and minor seventh chords, but the results are trickier to interpret than those for $[0,4,10]$.  I include them below, and we can talk about them in colloquium if people are interested.]
-
+%this needs cleaning or typesetting, and I'll need to cite/explain upper structure voicings
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=5in]{0411_tones.jpg}
@@ -171,32 +169,169 @@ The remaining sections of this chapter provide examples for how such algorithmic
 	\label{[0,4,11]}
 \end{figure}
 
+%if I use this and the above, I'll also need to explain or at least cite sus chords
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=5in]{0310_tones.jpg}
 	\caption{Frequently-occurring corpus slices including $[0,3,10]$ voicing subsets.  These include traditional minor seventh chords, with various added tones, as well as several voicings of ``sus" chords.}
 	\label{[0,3,10]}
 \end{figure}
-\newpage
 
+The categories produced by the algorithmic statistics carry no necessary syntactic properties, since the tallying process relied only on snapshots pitch alignment in time.  Even the quality of the resulting sonorities cannot be consistently determined; without knowledge of the local key and harmonic context, the root of a voicing like $[0,4,8,11]$ from Figure~\ref{[0,4,11]} could be the bottom voice (0), in which case the chord contains a major third (4), sharp fifth (8), and major seventh (11), or it could be the second from bottom voice (4), in which case the chord contains a major third (8), perfect fifth (11), and flattened sixth (0).  There are good reasons to prefer the former interpretation over the latter, but the flexibility of tertian-stack quality and root identification renders both possible.  Since the voicing tally algorithm knows nothing about root or quality label, it remains agnostic regarding many potential chord properties: membership in the superset voicing category $[0,4,11]$ does not require major seventh quality, any particular root, or any particular syntactic function.
 
-%TODO: what good does this do in the new chapter structure?  Re-write or cut
-Tallying unfiltered, unaltered salami slice voicings produces two immediate problems.  First, the most frequent slices contain just one or two pitches and are unlikely to provide useful harmonic information.  Second, there are thousands of different voicing structures in the YJaMP corpus alone, even if each one is only indexed by the semitonal distances above its bass note.  In an attempt to mitigate both of these problems, I use a hybrid pitch/pitch-class scheme: each slice is indexed by a set of pitch classes corresponding to chromatic scale degrees as well as the scale degree found in the bass.  As a first pass, I assign a single key to each jazz track using the Bellman-Budge weightings for a Krumhansl-Schmuckler key determination algorithm.\footnote{I'd like to upgrade to local window keyfinding, but that's not quite ready.}  Within each track, I then have Python/Music21 label each slice in the key's coordinates -- for example, first-inversion tonic triads would be given the label $([0,4,7],4)$.  
+The category membership nevertheless implies some of those properties to a human analyst in a productive way, but this is to partake of a separate semiotic process diagrammed in Figure~\ref{kockelman_2dia}, taken from Kockelman 2012.  The tallying algorithm $A_1$ observes voicing indices $S_1$ and produces superset statistics $I_1$ which make sense given the intervallic properties of the shared subset being tallied $O_1$.  The subsequent human analyst $A_2$ observes voicing superset statistics $S_2 = I_1$ and produces interpretants $I_2$ (like the quality label ``major seventh chord") which make sense in the context of the voicing statistics \emph{and} some embodied or enminded assumptions regarding root assignment or voice-leading reduction.  Since these properties are involved in $A_2$'s production of $I_2$, we might view them as generating signed objects $O_2$ with entirely different properties from $O_1$.  The communication between algorithmic agent and human agent can (or perhaps \emph{must}) produce different ontological framings.
 
-This voicing-to-scale-degree-set reduction process does not help the fact that small-cardinality slices dominate the data.  To draw high-frequency chords out of the slices, I turn to superset relations.  First, I assemble a unigram probability table for all the slices in the corpus.  Next, I make a second pass, comparing the unigram probability for each given slice of cardinality greater than one with the unigram probabilities for each chord present in the corpus of which the slice is a pitch class subset.\footnote{The code does not address slices of cardinality one, as each such slice would be a subset of all possible pitch class sets.}  The slice is counted in the category of its most probable superset.
-
-This has the attractive feature of enforcing a kind of balance similar to the accuracy-simplicity trade-off described above.  Small-cardinality slices tend to occur more frequently in the corpus, but they have fewer subsets to contribute counts; large-cardinality slices occur less frequently in the corpus, but they tend to have a larger number of subsets, each of which might contribute counts to the category tally.  As a result, the table of most frequent superset slices seen in Figure~\ref{supersets} represents a data-driven, pragmatic middleground, an appropriate scale at which to suggest a trade-off between large-vocabulary coverage and small-vocabulary generalization.  Dyads built on prominant scale degrees appear high on the list, as do chords corresponding to $Dm7$, $FM7$, and $CM7$ (relative to $CM$).  A variety of other chords with traditional tonal structures appear lower in the list, including a variety of dominant chords with extensions.
-\begin{figure}
+\begin{figure}%[h]
 	\centering
-	\includegraphics[width=5in]{pc_slice_supersets.jpg}
-	\caption{A tally of slices in the jazz piano corpus categorized by the most corpus-probable member of a given pc-set's superset tree.}
-	\label{supersets}
+	\includegraphics[width=3.5in]{kockelman_2dia.png}
+	\caption{Figure 2.7 from Kockelman 2012, a doubly-semiotic model for ``communication between conspecifics."  If $A_1$ and $A_2$ are a voicing tally algorithm and a human analyst, the statistical point of intersection $I_1 = S_2$ connects two processes generating different objects $O_1$, $O_2$.}
+	\label{kockelman_2dia}
 \end{figure}
 
+The potential for misinterpretation here, for ``parasitic" processes redirecting $I_1$ to some end quite different from that intended or produced by $A_1$, is clear, and it is under this condition that human-run corpus analysis must operate.\footnote{In Kockelman's terms, parasitic processes redirect or reframe semiotic processes in a variety of ways.  As formalized on Kockelman 2012, p.\ 15, an object ``considered as a means to an end" (that is, as a tool for mapping $S$ to $I$) ``is a second (or an intermediary), but insofar as it implies (embodies or indexes) other ends it might be directed to serve... it is a third (or mediator).  The parasite is whatever inhabits such implications."}  The above statistics for root-third-seventh voicing subsets imply that Levine's added tone descriptions are apt, but the price of escaping circularity in data selection is ontological instability.
+
+Just as na\"{i}ve voicing superset tallies can be made to lend performance data driven support to three-note voicing and added tone prescriptions, the same algorithm can connect Levine's ``A" and ``B" left-hand voicings to potential chord qualities.  In chapter seven of his \emph{Jazz Piano Book}, Levine formalizes a harmonic progression technique designed to project $ii$-$V$-$I$ chord qualities through efficient voice leading within a single (typically left) hand voicing.  Compacting the chord changes into a single hand ``gives your right hand the freedom to play the melody or improvise," and Levine cites their occasional use by Tatum, Garner, Jamal, and Garland and attributes their codification to Bill Evans and Wynton Kelly.\footnote{Levine 1989, p.\ 41.}  The left-hand voicings (LHV) present a challenge to traditional tertian-stack analysis, since they lack what Levine perceives to be the ``root" of each chord.  While a bass player may pick up the roots during combo gigs, the LHV have nevertheless become a fixture of solo piano performance, and they appear frequently in the YJaMP corpus.  The two sets of efficient LHV from Levine's chapter seven are reproduced in Figures~\ref{levine_Avcg} and \ref{levine_Bvcg}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=4in]{Levine_Avoicings.png}
+	\caption{The ``A" left-hand voicings from Figure 7-2 of Levine 1989.}
+	\label{levine_Avcg}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=4in]{Levine_Bvoicings.png}
+	\caption{The ``B" left-hand voicings from Figure 7-4 of Levine 1989.}
+	\label{levine_Bvcg}
+\end{figure}
+
+The intervallic structures of the A and B voicings differ from the qualities of the chords Levine intends them to index, represent, or support.  The $FM^7$ chords meant to be played in the syntactic context of ``$D-7$" can be represented with semitonal voicings $[0,4,7,11]$ and $[0,4,5,9]$, and the $G7$ voicings lack a $G$ but sound the appropriate $BF$ tritone alongside presumed chordal 9ths and 13ths.  Levine's imagined pianists run the semiotic analytical process backwards, in a way: the pianist $A$ sees chord symbols like $D-7$ or $G7$ on a lead sheet and produces voicings as interpretants.  These voicings make sense in the context of the chord symbols from the perspective of the pianist given categorical objects signed or indexed by the chord symbols: $D-7$ and $G7$ must refer to flexible collections of notes or chords for which the A and B voicings serve as adequate (or at least acceptable) responses.  Pianist-analyst communication, along these lines, might be mapped back onto Figure~\ref{kockelman_2dia}; in the left diamond, the pianist $A_1$ turns lead sheet signs into voicings ($S_1 \rightarrow I_1$), while in the right diamond, the analyst $A_2$ turns voicings back into chord symbols of some kind ($I_1 = S_2 \rightarrow I_2$).  The alignment of the framed objects $O_1$ and $O_2$ depends on the particular ways in which $A_1$ and $A_2$ make sense of their interpretants within particular (and perhaps quite different) ontologies.
+
+To attempt to tally the appearances of Levine's left-hand voicings in YJaMP is to interpose (at least) a third diamond -- and a third agent -- into the middle of the communicative semiotic chain.  Pianist $A_1$ turns many chord symbols into many voicings; algorithm $A_2$ turns many voicings into statistics regarding common supersets; analyst $A_3$ turns those statistics into observations regarding added tones, chord quality, and categories of substitutability.  Far from collapsing the distinction between $O_1$ and $O_2$, numerical models here multiply it.  We might be inclined to tack on yet another diamond before the others, where a tune writer turns imagined, composed, or improvised sonorities into lead sheet symbols-- in which case the entire communicative enterprise might suggest a kind of philosophical fictionalism, where each agent's actions are embedded in an ontology appealing to certain kinds of harmonic objects as a convenient way to facilitate the production and communication of their own interpretants.\footnote{Embracing a music theoretical fictionalism similar to Hartry Field's nominative philosophy of mathematics would amount to claiming that roman numeral models (or chord categorical claims, more generally) provide a reliable and convenient communicative framework consisting of literal falsehoods.  (See Field 1980, \emph{Science Without Numbers}, especially since music theory seems to rely more heavily on first-order logic than second-order, the quantification of which generally harms Field's construction.)  In Kockelman's terms, this would be a very high mode of ontological transformativity spurred by semiotic framing.}  All this to say: using corpus statistics to assess the appropriateness of the left-hand voicings as descriptors of piano performance is like standing on a stool balanced on a chair placed on a crooked floor.\footnote{Passionate defense or criticism of musical corpus analysis seems to depend on whether one thinks the analyst in this precarious position is trying to reach the ceiling or the floor.}  So it is deceptive and surprising how straight-forward the results appear.
+
+\begin{table}%[h]
+  \caption{Supersets of of Levine's $ii$ ``A" left-hand voicing (LHV) $[0,4,7,11]$.}
+  \centering
+\begin{tabular}{l| l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0,4,7,11]$ & 199 & Major seventh or $ii$ LHV\\
+$[0,15,19,22,26]$ & 117 & LHV + added root = minor ninth \\
+$[0,10,14,17,21]$ & 58 & Major ninth in inversion, or sus? \\
+$[0,1,5,8,12]$ & 51 & Major seventh with doubled 7 \\
+$[0,2,4,7,11]$ & 47 & Major seventh add 2 \\
+$[0,3,7,10,14]$ & 36 & LHV + added root = minor ninth \\[1ex]
+\hline
+\end{tabular}
+\label{a_ii_lhv}
+\end{table}
+
+In Figure~\ref{a_ii_lhv}, I turn the superset voicing statistics produced algorithmically for all the appearances of $[0,4,7,11]$ corpus-wide into interpretations invoking chord quality and added tones.  The most frequent voicing containing $[0,4,7,11]$ as a subset is the four-note voicing itself.  These sonorities likely occur in contexts where we might interpret them as root-position major seventh chords, so their frequent appearance neither supports nor undermines the claim that $[0,4,7,11]$ can appear in place of something like a $ii$ minor seventh chord.  But the second most common superset voicing, sounding 117 times in the corpus, resembles precisely the kind of minor ninth chord Levine suggests will result from the addition of a chord root.  The intervallic $[0,4,7,11]$ structure appears in the upper voices ($[15,19,22,26]$), and the bass of the voicing sounds a minor tenth below; if the former is a major seventh voicing, like $(F,A,C,E)$ in Figure~\ref{levine_Avcg}, then the added root produces a minor seventh chord with an added ninth, like $(D,F,A,C,E)$.  The most frequent way to add any additional voices to $[0,4,7,11]$ produces precisely the quality Levine predicts, as does the sixth most frequent ($[0,3,7,10,14]$, which reduces the minor tenth from the previous voicing to a minor third).  $[0,1,5,8,12]$ and $[0,2,4,7,11]$ could appear in the context of a major seventh or the minor seventh LHV, where the extra voice functions as a doubled seventh and added second (in the $M7$ case) or doubled ninth and added eleventh (in the rootless $m7$ case), respectively.
+
+The quality of the third most common voicing superset of $[0,4,7,11]$ is formally ambiguous but pragmatically identifiable.  $[0,10,14,17,21]$ contains an intervallic $[0,4,7,11]$ as its upper voices and adds a bass note a minor seventh below -- if the $[0,4,7,11]$ is the $(F,A,C,E)$ of Figure~\ref{levine_Avcg}, then this added bass produces $(G,F,A,C,E)$.  An elementary harmony student might readily identify this sonority as an $F$ ninth chord in fourth inversion, while an experienced jazz analyst might point to the wide spacing between the bass and the upper voices as evidence that this label is unproductive.  The added voice bears no particular resemblance to the $ii^7$ chord suggested by Levine's LHV, but it does appear in precisely this form in his Figure 4-4, reproduced here as Figure~\ref{Gsus}.  Here, Levine annotates the figure to identify the $D-7$ LHV in the upper $[0,4,7,11]$ subset, but he describes the full voicing as an archetypal ``Gsus" chord.  As Levine explains the labeling and use of this chord, he presents the results of of a multiply-framed ontology: ``$F/G$ describes exactly what's happening... an $F$ triad in the right hand over the note $G$ in the left hand.  $D-7/G$ describes the \emph{function} of the sus chord, because a sus chord is like a $II-V$ progression contained in one chord."\footnote{Levine 1989, p.\ 23.}  He attributes the popularization of sus chords to Coltrane and Hancock, and he notes that it may be used with the dominant chord produced by 4-3 resolution or without one.
+
+\begin{figure}
+	\centering
+	\caption{Figure 4-4 from Levine 1989, a ``Gsus chord."  The upper four voices appear in other contexts as a major seventh chord or the A LHV for a minor seventh chord.}
+	\includegraphics[width=2in]{levine_44.png}
+	\label{Gsus}
+\end{figure}
+
+Levine's labels refer to (and within) two separate semiotic structures: $F/G$ is an interpretant produced by an agent (say, a ``voicing algorithm" $A_1$ in Levine's brain) in response to voicing and pitch content, while a different agent (a ``function algorithm" $A_2$) uses nearly identical nomenclature ($D-7/G$) to index some property of the chord's function.  Levine explains this function in strictly pitch-based terms -- ``your right hand plays a common $D-7$ left-hand voicing... over a $G$ root," and ``the $II-V$ progression in the key of $C$ is $D-7$, $G7$" -- but the functional interpretant is \emph{not} produced simply by analyzing intervallic voicing and pitch structure.\footnote{Levine 1989, p.\ 23.}  Rather, Levine's presentation relies on a functional ontology in which $ii$ minor seventh chords have a property of leading to $V$ dominant sevenths in tonally syntactic progressions.   Despite the student analyst's observation that this sonority consists exclusively of pitch classes belonging to $F^9$, the voicing and progression behavior of $[0,10,14,17,21]$ leads Levine to produce $D-7/G$ as a functional interpretant.  
+
+In a way, this sus-usage of $[0,4,7,11]$ remains true to the ethos of Levine's left-hand voicings.  Table~\ref{a_ii_lhv} assessed how frequently the LHV appeared as the upper voices of a minor seventh chord (typically preceding a dominant $V$, for Levine), but my interpretation of one of its statistics implied that the voicing also frequently appears as the upper voices of a sus chord (typically preceding or replacing $V$, for Levine).  In both cases, Levine carefully assigns a root to the chord, and in both cases the root is determined not by pitch content but by the typical behavior of the chord in tonal progressions.  This appeal to participation in certain kinds of syntactic progressions as a basis for the assignment of harmonic kinds will provide the basis for chapters 3 and 4.
+
+Figure~\ref{a_V_lhv} provides a simpler statistical portrait of the supersets for $[0,4,6,11]$, the left-hand A voicing Levine suggests for $V$.  Each of the ten most frequent appearances of a $[0,4,6,11]$ superset either (1) doubles a voice at the octave, (2) adds a chord extension appropriate to a dominant seventh with $[0,4,6,11]$ as its upper voices, or (3) adds the root required to turn $[0,4,6,11]$ into a fully-voiced dominant seventh (9,13) chord.  The superset data indicates that $[0,4,6,11]$ tends to appear in fewer contexts than $[0,4,7,11]$, both in terms of overall frequency and interpreted quality.  The voicing superset statistics for the B voicings, given here as Figure~\ref{b_ii_lhv} and \ref{b_V_lhv}, fit a similar narrative.  In each of these cases, the performance data indicates that Levine's left-hand voicings often appear as the upper voices of chords with the qualities he predicts.
+
+\begin{table}%[h]
+  \caption{Supersets of of Levine's $V$ ``A" left-hand voicing (LHV) $[0,4,6,11]$.}
+  \centering
+\begin{tabular}{l| l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0,4,6,11]$ & 160 & LHV \\
+$[0,4,6,11,18]$ & 31 & voice 3 doubled \\
+$[0,4,6,11,23]$ & 28 & voice 4 doubled \\
+$[0,2,4,6,11]$ & 23 & LHV + added root = dominant seventh (9,13) \\
+$[0,4,6,11,16]$ & 22 & voice 2 doubled \\
+$[0,4,6,11,21]$ & 18 & LHV of $V$: added fifth \\
+$[0,10,14,16,21]$ & 16 & LHV + added root = dominant seventh (9,13) \\
+$[0,4,6,11,26]$ & 14 & LHV + added root = dominant seventh (9,13) \\
+$[0,4,6,11,20]$ & 14 & LHV of $V$: added \# 11 \\
+$[0,1,5,7,12]$ & 13 & voice 1 doubled \\[1ex]
+\hline
+\end{tabular}
+\label{a_V_lhv}
+\end{table}
+
+\begin{table}%[h]
+  \caption{Supersets of of Levine's $ii$ ``B" left-hand voicing (LHV) $[0,4,5,9]$.}
+  \centering
+\begin{tabular}{l| l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0,4,5,9]$ & 476 & Major seventh or $ii$ LHV \\
+$[0,4,5,9,16]$ & 124 & voice 2 doubled \\
+$[0,4,5,9,19]$ & 107 & $ii$ LHV: added 11 or M7 add 9 \\
+$[0,4,5,9,21]$ & 87 & voice 4 doubled \\
+$[0,4,5,9,17]$ & 69 & voice 3 doubled \\
+$[0,4,5,9,28]$ & 67 & voice 2 doubled \\
+$[0,7,11,12,16]$ & 65 & voice 3 doubled \\
+$[0,10,14,15,19]$ & 65 & $ii$ LHV: added root \\[1ex]
+\hline
+\end{tabular}
+\label{b_ii_lhv}
+\end{table}
+
+\begin{table}%[h]
+  \caption{Supersets of of Levine's $V$ ``B" left-hand voicing (LHV) $[0,5,6,10]$.}
+  \centering
+\begin{tabular}{l| l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0,5,6,10]$ & 62 & $V$ LHV \\
+$[0,5,6,10,20]$ & 17 & LHV + added root = dominant seventh \\
+$[0,6,11,12,16,20,23]$ & 15 & voice 3 doubled; if $V$ LHV: added \# 11, 13 \\
+$[0,5,6,10,18]$ & 10 & voice 3 doubled \\
+$[0,5,6,10,17]$ & 10 & voice 2 doubled \\
+$[0,5,6,10,29]$ & 10 & voice 2 doubled \\
+$[0,5,6,10,27]$ & 8 & $V$ LHV: added fifth \\[1ex]
+\hline
+\end{tabular}
+\label{b_V_lhv}
+\end{table}
+
+To assess the functional behavior of these chords -- whether they \emph{behave like} a $ii$ or $V$, instead of merely resembling one -- requires (more) engagement with keys and temporality.  A maximally transparent form of functional data mining would restrict itself to evidence like that given in Figure~\ref{[0,4,10,17]}, which implied local dominant-tonic relations directly from temporal voicing data and without the need to impose judgments regarding key.  But the claims of  Figure~\ref{[0,4,10,17]} are based on extremely slim data -- a handful of observations for each transition.  The pianists recorded in YJaMP use such a wide variety of voicings that tracking the progression behavior of each one individually would require a far larger corpus.\footnote{If the number of distinct voicings employed scales roughly linearly with the number of pianist-hours recorded, no corpus of any size could produce the relevant statistics.  I assume, however, that the number of distinct voicings will level off much faster than the number of recordable performances, rendering the problem accessible at large scale.}  As Levine already implies by describing ``voicings" in terms of their progression behavior relative to local key centers, transposing the wide variety of possible voicings relative to their local keys greatly reduces the size of the computational alphabet -- and generates a new ontological framing amenable to syntax.
+
+\section{Scales and key finding}
+%TODO: other temporal extreme - give cardinality at time scale stats, suggest scalar work
+%TODO: explain my local keyfinding methods
+
+%look at what objects fall out from clustering at various time scales
+\begin{landscape}
+\begin{figure}
+	\centering
+	\includegraphics[width=8in]{cardinalities.jpg}
+	\caption{Average pc-set cardinalities for four window sizes.  As window size increases, so does average cardinality; the time scale under examination is interrelated with the type and size of the resulting objects.}
+	\label{cardinalities}
+\end{figure}
+\end{landscape}
+
+%TODO: USE material from 7 Oct 2015 lab update powerpoint pitch sets -> pcs -> sds
+
+%EVERYTHING BELOW PROBABLY GOES
+
+
+%quick justification of certain harmonic objects ([pitch class set], bass) from slice data.  Likely not relevant, now.
 It is worth noting that this unremarkable list makes no assumptions about chord structure, consonance, or cardinality.  Dissonant slices are treated exactly the same as perfect fifths, and dyads start on the same footing as pentatonic scales, stacks of fourths, and seventh chords.  No reduction of non-harmonic tones has been employed.  The fact that minor, major, and dominant seventh chords of cardinality three, four, and five appear on the list anyway indicates that postulating these chord qualities as important harmonic categories is well-supported in the YJaMP corpus.  Na\"{i}ve slice data suggests that traditional jazz-analytic categories can be shown to refer to objects with important ontological status.
 
-\section{Chords as Local Macroharmonic Clusters}
+%\section{Chords as Local Macroharmonic Clusters}%remove section break?
 %TODO: re-make this about long-duration scale-type interpretants
+%BAD transition
 If triads and seventh chords of cardinality three, four, and five occupy a special status as appropriate representative slice categories in the corpus, it may be possible to find and make use of them while relaxing one further pillar of chord identity: instead of requiring that chords be some kind of verticality, we might ask if ``chords" can satisfy analytical functions without needing to be vertical in the first place.  It seems to me that chords serve three important purposes:
 \begin{enumerate}
 	\item They give us a sense of how we should expect nearby notes to behave, as well as of which notes we should expect to appear most frequently.
@@ -215,19 +350,10 @@ Sample results for windows of size 400ms, 800ms, and 1600ms are given below (in 
 
 What is not clear, yet, is whether seeing traditional objects of inquiry in the results is sufficient to indicate that the corpus methods are a useful basis around which to build a harmonic ontology.  If weighted pc-set clustering only produces some of our boring preconceptions alongside some junk, then I should reconfigure what I think my methods can do for me; if, on the other hand, this type of clustering proves an acceptable means of pulling harmonic objects from noisy data, then corpus analysis should be able to take steps toward addressing Gjerdingen's object-first bias problem -- and it should be possible to do so with \emph{any} noisy corpus.
 
-\section{Scale-degree sets and temporal progressions}
+%\subsection{Scale-degree sets and temporal progressions}
 %TODO: set up chapter 3 by giving some ontology and statistics regarding the sd-sets that will come up?
 
-%look at what objects fall out from clustering at various time scales
 
-\begin{landscape}
-\begin{figure}
-	\centering
-	\includegraphics[width=8in]{cardinalities.jpg}
-	\caption{Average pc-set cardinalities for four window sizes.  As window size increases, so does average cardinality; the time scale under examination is interrelated with the type and size of the resulting objects.}
-	\label{cardinalities}
-\end{figure}
-\end{landscape}
 
 
 \begin{figure}
