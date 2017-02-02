@@ -62,7 +62,7 @@ Figure~\ref{lexicon} shows the overall unigram distribution for each of the 1850
 For computational models, this truncation resembles a statistical analog to traditional music theoretical  voice-leading reduction, though with a narrowly defined justification.  While a human analyst might discount a particular sonority as arising from voice-leading embellishment, lexical truncation discounts only chords with infrequent appearance in the corpus, regardless of the context in which they appear.  The statistics and category assignments resulting from the truncated lexicon may later guide analytical decisions regarding the discarded sonorities, but the outcasts are formally excluded from the model's representation scheme.  Bias creeps into the data here, but in a way that seems most productive for the aims of the model.\footnote{Computational alphabet-size reduction schemes vary in their subtlety, ranging from mere probability truncations like this to sophisticated encodings of human-analytical intuitions; for a good example of the latter, see White 2013.}
 
 %Manhattan metric and PCA justification
-With a 200-chord lexical restriction in place, each origin chord can then be associated with an identically-sized 200 by 100 matrix; the 200 rows correspond to the destination chord probability distributions for the 200 most frequent chords in the corpus, in rank order, and the 100 columns correspond to 100 consecutive 50-millisecond time windows.  For the sake of consistency, ``empty rows" (consisting entirely of zeroes) appear for destination chords which never follow a given origin chord within five seconds.  Identically-sized matrices can be compared element-by-element, dramatically simplifying the construction of similarity metrics.  The Manhattan (or ``Taxicab") distance, a special case of the Minkowski distance metric, sums the difference between corresponding entries in two vectors or arrays.  For vectors $x$ and $y$ with $n$ dimensions each, the Manhattan distance $d_1$ is given by
+With a 200-chord lexical restriction in place, each origin chord can then be associated with an identically-sized 200 by 100 matrix; the 200 rows correspond to the destination chord probability distributions for the 200 most frequent chords in the corpus, in rank order, and the 100 columns correspond to 100 consecutive 50-millisecond time windows.  For the sake of consistency, ``empty rows" (consisting entirely of zeroes) appear for destination chords which never follow a given origin chord within five seconds.  Identically-sized matrices can be compared element-by-element, dramatically simplifying the construction of similarity metrics.\footnote{There are two main streams of machine learning based on matrices (formally, two-dimensional tensors) of this kind; the simplest (introduced here) essentially vectorizes each matrix, flattening its elements to calculate distances via simple dot products.  Tensor learning, on the other hand, retains the structure of each matrix, though implementation of tensor learning is more difficult than vector cases.}  The Manhattan (or ``Taxicab") distance, a special case of the Minkowski distance metric, sums the difference between corresponding entries in two vectors or flattened arrays.  For vectors $x$ and $y$ with $n$ dimensions each, the Manhattan distance $d_1$ is given by
 \begin{eqnarray*}
 x &=& (x_1,x_2,...,x_n) \\
 y &=& (y_1,y_2,...,y_n) \\
@@ -109,7 +109,7 @@ As a result, I compare origin chords by imposing a Manhattan metric on matrices 
 d(\alpha, \beta) = \sum_{i=1}^{200} \sum_{j=1}^3 \lvert \alpha_{ij} - \beta_{ij} \rvert
 \end{equation}
 
-This distance metric remains agnostic about the pitch structures of the origin and destination chords, and it provides a (dis)similarity metric based purely on progression statistics; a larger Manhattan distance $d$ between two matrices $\alpha$ and $\beta$ correlates with a sense of increased difference between the progression behavior of the corresponding origin chords.\footnotes{Other metrics imposed on this basis could provide similar results -- especially other Minkowski distances of low order.  I offer no proof here that Manhattan provides an optimal metric, though I suspect a heuristic demonstrating optimality in any meaningful sense would need to produce a series of clusterings with different metrics and compare their plausibility.} As the next section will show, a metric of this kind allows clustering algorithms to group origin chords together based on similarity in their overall progression tendencies, yielding a rough approximation of chord categories assembled from behavioral statistics.
+This distance metric remains agnostic about the pitch structures of the origin and destination chords, and it provides a (dis)similarity metric based purely on progression statistics; a larger Manhattan distance $d$ between two matrices $\alpha$ and $\beta$ correlates with a sense of increased difference between the progression behavior of the corresponding origin chords.\footnotes{Other metrics imposed on this basis could provide similar results -- especially other Minkowski distances of low order.  The astute reader may notice that this choice of metric discounts much of the 2D tensor structure inherent in the temporal progression matrices; this will return later in the chapter.} As the next section will show, a metric of this kind allows clustering algorithms to group origin chords together based on similarity in their overall progression tendencies, yielding a rough approximation of chord categories assembled from behavioral statistics.
 
 \section{Clustering methods}
 %with Manhattan metric in hand, explain at least flat agglomerative clustering for (functional?) categories
@@ -182,6 +182,8 @@ None of the chords in this green cluster are among the top 100 most unigram-prob
 	\label{Dend_sub3}
 \end{figure}
 
+%TODO: add table of full dendrogram membership, for readability (and numerical cross-ref)
+
 \section{Generalized harmonic syntax: categories and classifications}
 %Lay out the general problem: want to get categories without noise -- especially so we can see useful behavior -- but then also use those categories for classifying noisier states
 %Note that various types of machine learning algorithm can place lower-P chords into the flat agglomerative clustering classes; don't come down on one firm algorithm.
@@ -192,9 +194,9 @@ Two important kinds of optimization confront any analyst choosing from the wide 
 
 %Do I need to define accuracy/precision/recall?
 
-Such cross-validation applies to any supervised classifier, providing a metric with which to choose between different algorithms.  Each algorithm, however, can be fine-tuned in a number of ways.  Most depend on several model parameters set \emph{a priori}, the effect of which on the model's predictive power may be difficult to predict.  This second kind of optimization, in which the analyst attempts to choose the best parameters for a given model, can make use of cross-validation as a tool for assessment -- but the cross-validation must be performed for each plausible combination of model input parameters, or at least some meaningful subset of that parameter space.
+Such cross-validation applies to any supervised classifier, providing a metric with which to choose between different algorithms.  Each algorithm, however, can be fine-tuned in a number of ways.  Most depend on several model parameters set \emph{a priori}, the effect of which on the model's predictive power may itself be difficult to predict.  This second kind of optimization, in which the analyst attempts to choose the best parameters for a given model, can make use of cross-validation as a tool for assessment -- but the cross-validation must be performed for each plausible combination of model input parameters, or at least some meaningful subset of that parameter space.
 
-Fortunately, scikit-learn provides ready-made Python methods for both repeated, automated cross-validation and optimization over model parameters.  With the flat cluster assignments as tags for each of the 200 most probable chords in YJaMP, I employ two main scikit-learn methods: \emph{train\_test\_split} randomly divides the clustering into an $80\%$ development/training set and a $20\%$ testing set, and \emph{GridSearchCV} checks a wide variety of model parameters via cross-validation on the training set.  Given a ``grid" consisting of many combinations of model parameters, GridSearchCV uses every possible combination of those input parameters to build a model based on the development set.  It employs a multi-fold cross-validation scheme, where the development set is divided into four different parts, and each part is sequentially ``held out" as an internal testing set.  Based on each parametric model's performance in the cross-validation, GridSearchCV chooses the set of parameters most likely to yield a high-accuracy model on the final testing set.  Put another way, the model selection process follows a series of steps:
+Fortunately, scikit-learn provides ready-made Python methods for both repeated, automated cross-validation and optimization over model parameters.  With the flat cluster assignments as tags for each of the 200 most probable chords in YJaMP, I employ two main scikit-learn methods: \emph{train\_test\_split} randomly divides the clustering into an $80\%$ development/training set and a $20\%$ testing set, and \emph{GridSearchCV} checks a wide variety of model parameters via cross-validation on the training set.  Given a ``grid" consisting of many combinations of model parameters, GridSearchCV uses every possible combination of those input parameters to build a model based on the development set.  It employs a multi-fold cross-validation scheme, where the development set is divided into four different parts, and each part is sequentially ``held out" as an internal testing set.\footnote{Formally speaking, I employ \emph{stratified} k-fold cross-validation, since the cluster sizes in the training data are unbalanced; this attempts to preserve the rough proportions of each cluster in each fold.  And since some very small clusters cannot be divided into separate folds, the algorithm throws out clusters with fewer than three observations in them.}  Based on each parametric model's performance in the cross-validation, GridSearchCV chooses the set of parameters most likely to yield a high-accuracy model on the final testing set.  Put another way, the model selection process follows a series of steps:
 
 \begin{enumerate}
 	\item Divide the overall flat clustering into a development set ($80\%$) and a testing set ($20\%$).
@@ -205,10 +207,69 @@ Fortunately, scikit-learn provides ready-made Python methods for both repeated, 
 	\item With model and parameters in hand, train the selected classifier on the full development set and test it on the originally held-out testing set.
 \end{enumerate}
 
-%TODO: walk through a couple of selected supervised classifier methods (knn and ... random forests?) and give accuracy measures drawn from the development set, possibly investigating what kinds of labels they got right and wrong.
-%TODO: use one or more of those classifiers to make cluster predictions for a low-P chord or two?
+%set up and explain k-nn example, which is definitely the simplest appropriate classifier
+The ``k-Nearest Neighbors" algorithm (kNN) constitutes the simplest machine learning technique compatible with the above training and testing pipeline.  In some ways, kNN stands as a limiting case for machine learning algorithms, in that it requires the construction of no model at all -- training the algorithm only requires storing the tagged training set and defining a way to determine what members of that set are closest to a new observation in need of a label.  When a kNN algorithm encounters an observation in the test set which needs a category tag, all it does is look through the training set to find the closest tagged observations.  It then assumes that whatever tag the clusterer applied to its nearest neighbors should also apply to the (previously untagged) test case.
 
+Building a development set from a random selection of $80/%$ of the tagged destination chord matrices, I subject kNN to a parameter grid search with a small range of possible parameters over which to optimize (step (2) above).  First, the algorithm can consider any number $k$ of the nearest neighbors to a given test observation when making its tag prediction; I preselect values of $k$ ranging from 1 (the closest neighbor only) to 10.  While selecting those neighbors, I allow the algorithm to employ either a Manhattan distance or Euclidean distance (both cases of general Minkowski distances with $p=1$ or $p=2$, respectively).  And in cases where the algorithm considers more than one neighbor, I allow it to ``vote" for a winning tag using either of two weighting schemes: each of the $k$ neighbors suggests its tag with equal weighting, or each suggests its tag with a weighting inversely proportional to its distance from the test observation.  If the algorithm considers the five nearest neighbors to a test observation, for example, the former case would ask each neighbor to vote once with its classification tag, and the resulting tally would determine the winning prediction.  With distance-based weighting, however, the closest single neighbor's vote carries more weight than the other four, and the tag with the largest total \emph{weighted} tally determines the prediction.
 
+With these relatively crude parameters, gridSearchCV builds kNN models on the development set.  As steps (3) and (4) above indicate, each model stores three-quarters of the development set in order to ``train" the model.  Each of the remaining chords in the development set is then compared to the training set with the given choice of model parameters.  The predictions made based on the training portion of the development set are compared to the actual tags for the remaining observations, and an accuracy measure is tallied.  The kNN model parameters which tend to yield the highest accuracy scores are then reported (step (5))-- and a model with those parameters may then be trained on the full development set for use on the originally held-out $20\%$ test set (step (6)).
+
+%gridSearch kNN selections: p = 1, neighbors = 1 or 3, weights = uniform or distance
+Given the simplicity of the original clustering algorithm, it comes as no surprise that the grid search suggests simple optimal parameters for the kNN model: with a wide variety of initial random splits for the data set, gridSearchCV only suggests two possibly optimal combinations.  For most trials, the most accurate model chooses to consider only the closest single neighbor ($k=1$) under the Manhattan distance metric.  In a smaller number of trials, the model selects the three closest neighbors ($k=3$) and weights their votes in inverse proportion to their Manhattan distance from the test observation.  The cross-validation accuracy scores for these models within the development set tend to fall in the range $0.55 \pm 0.1$; this indicates that if a model trained on the development set were used to predict values for the test set, we might expect a similar level of accuracy.
+
+Running this procedure 100 times, where a model is trained and optimized on the development set and then used to predict tags for the test set, produces a range of accuracy scores plotted in Figure~\ref{kNN}.  As the cross-validation scores predicted, the accuracy on the test set centers around $57\%$, falling off steeply within about $10\%$ on either side.  This means that across the (randomly selected) test set, the model typically guesses the correct category assignment between one half and two thirds of the time.
+
+%Perform this optimization many times and give a histogram of the accuracy on the testing set.  This makes clear that I'm not cherry-picking accuracy.
+\begin{figure}
+	\centering
+	\caption{A histogram capturing the accuracy of 100 grid search optimized k-Nearest Neighbors classifiers applied to different 80/20 development/testing set splits.}
+	\includegraphics[width=4.5in]{kNN_acc.png}
+	\label{kNN}
+\end{figure}
+
+The types of predictions the model makes reveal where the largest sources of error are.  A classification report for a typical set of model predictions (accuracy $59\%$) is given in Table~\ref{class_report}.  The first column of the table references category numbers assigned by the flat clustering algorithm alongside a hand-chosen, roughly representative scale-degree set of that category.  The cluster numbers themselves are meaningless, though their ordering and adjacency reflect higher-level cluster similarities in the hierarchical model.
+
+For each category, the classification report provides precision and recall scores alongside the category's ``support," the number of members of the category which appeared in this particular test set.  Precision and recall refer to complimentary accuracy metrics.  For each row on Table~\ref{class_report}, the model's recall refers to what percentage of the test observations from the category the model classified correctly; a score of $1.0$ indicates that each of the members from the category appearing in the test received the appropriate cluster label.  Precision tracks the model's ``false-positives," so to speak.  Since cluster 12, a large tonic cluster, contains so many samples (6 appear in the test set), a na\"{i}ve first-order model might attempt to label \emph{all} observations with the tag ``12."  This would guarantee perfect recall for category 12, but it would result in a large number of other observations erroneously receiving the same tag.  The precision score tracks what percentage of the model's guesses for a given category tag turned out to be correct.  A precision of $1.0$ indicates that every time the model guessed a particular tag, it was correct, while a precision of $0.5$ indicates that half of the model's assignments of a particular category tag were incorrect.
+
+The model's best performance seems to correlate with tonic-type chords, like those in categories 12, 19, 20, and 53, while the model guessed no correct tags at all for several categories (9, 10, 18, 36, 37, 51).  The comparatively low precision scores for categories 12 and 15 indicate that many of the mis-identified observations received tags from these categories.  The model's many guesses and high recall scores for categories 12 and 15 reflect that these are the largest categories in the training set (and the corpus in general); the flat clusterer grouped 27 of the top 200 most probable scale-degree sets into category 12, and 19 into category 15, so the kNN model is more likely to find a nearest neighbor here than in another category -- especially a category with few members.
+
+\begin{table}%[h]
+  \caption{Classification report for a grid search-optimized k-Nearest Neighbors test predicting the category tags for 29 previously-unseen chords.}
+  \centering
+\begin{tabular}{l |l |l |l |l}
+\hline\hline
+cluster & precision	&  recall &  support \\ [0.5ex]
+\hline
+	 9 $[0,4,5,9]$	    &    0.00  &    0.00   &       2\\
+	 10 $[5,7,10]$  	&    0.00  &    0.00   &       1\\
+	 12 $[0,4,7]$		&    0.56  &    0.83   &       6\\
+	 15 $[3,5,8]$ 		&    0.43  &    0.75   &       4\\
+	 18 $[0,4,7,9,11]$  &    0.00  &    0.00   &       1\\
+	 19 $[0,4,11]$		&    1.00  &    1.00   &       1\\
+	 20 $[4,7,11]$		&    1.00  &    1.00   &       1\\
+	 35 $[2,6,7,11]$	&    1.00  &    1.00   &       1\\
+	 36 $[2,4,8]$		&    0.00  &    0.00   &       1\\
+	 37 $[0,4,10]$	    &    0.00  &    0.00   &       2\\
+	 38 $[0,2,6]$	    &    0.50  &    1.00   &       1\\
+	 42 $[2,6,9]$	    &    0.50  &    0.50   &       2\\
+	 48 $[0,2,5]$	    &    0.50  &    0.50   &       2\\
+	 51 $[0,3,5,8]$	    &    0.00  &    0.00   &       1\\
+	 53 $[0,3,7,10]$    &    1.00  &    1.00   &       2\\
+	 54 $[0,3,7,8]$	    &    1.00  &    1.00   &       1\\
+\hline
+avg / total  &  0.47   &  0.59   &       29\\[1ex]
+\hline
+\end{tabular}
+\label{class_report}
+\end{table}
+
+%reminder that this is not a human
+These classifications are certainly not as accurate as those made by a suitably-trained human analyst, but they are produced by an entirely different and much more na\"{i}ve process.  A trained kNN model provides proof of principle that lower-probability chords -- for which the flat clustering algorithm provides no tag at all -- can still be assigned a classification within the scheme of the clustering.  The complex temporal behavior of the most probable chords in a corpus can be used to produce a bottom-up agglomerative clustering, and then a machine learning model can use that clustering to make (imperfect, but much better than random) decisions about rarer chords.
+
+%TODO: give predictions for a couple of low-P chords
+
+%TODO: indicate that the problem is really better suited to a support tensor machine or convolutional neural network
+%If each origin chord can be associated with a 2-D tensor, there could well be structure in there hidden by treating it as a high-dimensional vector.  Suggest this for future work?
 
 
 \subsection{What do categories do?}
