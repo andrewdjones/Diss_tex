@@ -1,29 +1,66 @@
 \documentclass[12pt,titlepage]{report}
-\usepackage{latexsym,graphicx,amsmath,amssymb,graphics,lscape,rotating,fancyhdr,hyperref,setspace,harmony,PDFpages,indentfirst,multicol,multirow,array,makeidx,longtable,caption} 
-\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{latexsym,graphicx,amsmath,amssymb,graphics,lscape,rotating,fancyhdr,setspace,harmony,PDFpages,indentfirst,multicol,multirow,array,makeidx,longtable,caption} 
+\usepackage[top=1in, bottom=1in, left=1.5in, right=1in]{geometry}
+\usepackage{hyperref}
 \pagestyle{plain}
 \linespread{1.7}
 \makeindex
 %\oddsidemargin  0.0in \textwidth      6.5in
-%wasysym,stmaryrd,gensymb,musictex,
 
-%TODO: all footnotes currently hyperlink to p. 1???
+%TODO: re-fit table widths to handle 1.5L x 1R margin (6in width)
 
 \begin{document}
-%\begin{titlepage}
-\author{Andrew Jones}
-\title{Harmony and Statistical Temporality: Jazz Syntax from Corpus Analytics}
-%\includegraphics{Princeton.png}
-\maketitle
-%\include{Thesis_Title}
+%750-word abstract has to go here, PRECEDING title page
+\include{Diss_Abstract}
+\newpage
+
+%Still need to do some funny business to get all the mandated crap on the title page
+\titlepage
+%\date{\vspace{-2in}}%is this functional?
+
+\vspace{1in}
+
+\centerline{ \large Harmony and Statistical Temporality:}
+
+\centerline{ \large Toward Jazz Syntax from Corpus Analytics}
+%\maketitle
+
+\vspace{3.5in}
+
+{\centering
+\setstretch{1.0}
+A Dissertation
+
+Presented to the Faculty of the Graduate School
+
+of
+
+Yale University
+
+in Candidacy for the Degree of
+
+Doctor of Philosophy
+
+\vspace{1.5in}
+
+by
+Andrew Daniel Jones
+
+\vspace{0.5in}
+
+Dissertation Directors: Brian Kane and Ian Quinn
+
+\vspace{0.5in}
+
+May 2017
+
+}
 \setcounter{page}{1}
 \pagenumbering{roman}
 \tableofcontents
 \newpage
 \listoffigures
 \newpage
-%\include{Diss_Abstract}
-%\newpage
 %\listoftables
 %\newpage
 %\newcommand{\mathsym}[1]{{}}
