@@ -1,23 +1,4 @@
 \chapter{Objectifying Jazz Harmony}
-%TODO: -Put unquant interonsets plot in Ch. 2?  (ch. 2, around p. 82, in the discussion for sliding keyfinding windows; also seems relevant to the beginning of ch. 3, so maybe end of ch. 2 really is a better place.)
-
-%New chapter outline:
-%-Gjerdingen complains that element selection builds in bias
-%-I think this is true, but that we can be very explicit about why and what
-%-SS 1:
-%	\item Jazz voicings example: easy stats
-%	\item use to introduce Kockelman's model
-%-SS 2:
-%	\item Point out that the alignment of agents (A) and objects (O) is accomplished through the relation between relations -- turning our attention to how we turn indices into interpretants
-%	\item Agents: jazz pianist, analyst, algorithm
-%	\item Interpretants: categorical and syntactic decisions/labels at disparate time scales?
-%	\item Indices: pitches, pcs, durations, intensities, ...?
-%-SS 3:
-%	\item Already saw one type short-duration interpretant (voicing), and how it generated a particular ontology
-%	\item Consider a long-duration one: scales (macroharmonic distributions)
-%-SS 4:
-%	\item While both of those classes of agent interpretation are worth pursuing, the remaining chapters will focus on the time scale in between, and on common scale degree sets
-%	\item JUSTIFICATION OF CH 3 METHODS?
 
 %Gjerdingen's bias complaint
 In his recent work, Robert Gjerdingen summarizes the process of musical corpus analysis and issues a warning to its practitioners:\footnote{Gjerdingen 2014, p.\ 193.}
@@ -38,9 +19,9 @@ thus often at stage 1 that the researcher makes decisions
 that reveal a presentist or historicist bias."
 \end{quote}
 
-As Gjerdingen rightly notes, analysts often -- or perhaps \emph{must} -- make choices about the nature of the objects and processes under study well outside the frame of data-driven or statistical testing.\footnote{See, for example, roman numeral studies by Tymoczko, hierarchical phrase parsing by Rohrmeier, computational blues taggers by Steedman, usw.}  In the context of jazz, a researcher might produce a statistical model of chord-to-chord jazz progressions which is admirably agnostic about the types of progressions likely to result -- but which assumes as a starting point that chords have very particular properties arising from the history of music theory and the affordances of printed or digitized scores.  If the objects of harmonic importance are assumed to be consonant, tertian stacks, with unambiguous roots in the bass, whose notes sound at precisely the same moment, and which might be decorated with a variety of comparatively-unimportant embellishing tones, an analyst can generate statistics describing their behavior.  There is no guarantee, or at least no empirical guarantee, that the resulting statistical picture reflects categories particularly relevant to the corpus at hand.  If analysts are not to allow statistical methods to shoehorn particular data into pre-chosen categories, we must provide ways of specifying and generating categories of chord object from the data in as transparent a way as possible.
+As Gjerdingen rightly notes, analysts often -- or perhaps \emph{must} -- make choices about the nature of the objects and processes under study well outside the frame of data-driven or statistical testing.\footnote{Recall, for example, Chapter 1's description of non-recursive roman numeral studies (Tymoczko 2010), hierarchical phrase parsing (Rohrmeier 2007), and generative blues progressions (Steedman 1984), each of which requires object assumptions to get off the ground.}  In the context of jazz, a researcher might produce a statistical model of chord-to-chord jazz progressions which is admirably agnostic about the types of progressions likely to result -- but which assumes as a starting point that chords have very particular properties arising from the history of music theory and the affordances of printed or digitized scores.  If the objects of harmonic importance are assumed to be consonant, tertian stacks, with unambiguous roots in the bass, whose notes sound at precisely the same moment, and which might be decorated with a variety of comparatively-unimportant embellishing tones, an analyst can generate certain kinds of statistics describing their behavior.  There is no guarantee, or at least no empirical guarantee, that the resulting statistical picture reflects categories particularly relevant to the corpus at hand.  If analysts are not to allow statistical methods to shoehorn particular data into pre-chosen categories, we must provide ways of specifying and generating categories of chord object from the data in as transparent a way as possible.
 
-To bring chord categories into the light of day, I propose representations connecting observable pitch features to chord objects to which they might be seen to refer.  Starting from chord definitions similar to those found in the jazz theory literature, I consider both voicings and scale-degree sets as potential categories permitting communication between algorithmic statistics and human interpreters.  Two productive results ensue.  First, I show that it is possible to re-create many of the chord categories currently employed with a minimum number of prior assumptions; second, I isolate harmonic objects for syntactic study in later chapters.  In this way, I mean the title of this chapter in a very literal sense: what follows is a discussion of how to make at least two kinds of objects out of jazz performance data.
+To bring chord categories into the light of day, I propose representations connecting observable pitch features to chord objects to which they might be seen to refer in productive ways.  Starting from chord definitions similar to those found in the jazz theory literature, I consider both voicings and scale-degree sets as potential categories permitting communication between algorithmic statistics and human interpreters.  Two productive results ensue.  First, I show that it is possible to re-create many of the chord categories currently employed with a minimum number of prior assumptions; second, I isolate harmonic objects for syntactic study in later chapters.  In this way, I mean the title of this chapter in a very literal sense: what follows is a discussion of how to make at least two kinds of objects out of jazz performance data.
 
 %Corpus analysis + Kockelmanian semiotics can unpack and potentially avoid this problem
 Gjerdingen's step (1) above implicitly questions ontological assumptions regarding harmonic processes, and as I unpack some of its implications for jazz syntax, I will frame the complicated relationship between harmonic objects and the selection and representation of their indices in semiotic ontological terms taken from linguistic anthropologist Paul Kockelman.\footnote{I refer especially to Kockelman's \emph{Agent, Person, Subject, Self} (2012) and ``The Anthropology of an Equation: Sieving Spam, Algorithmic Agents, and Ontologies in Transformation" (2013).  For a formal introduction to the relevant models, I refer the reader to the former; for an example of their application, see the latter.} The abstract terminology and unusual ontology that result arise as both a consequence and motivation.  My concern is to produce as clear an \emph{epistemic} pathway as possible and to see what ontological structure results.  Rather than starting with traditional assumptions about chords, scales, and non-harmonic tones, and then trying to find a pathway to connect those abstractions to musical surfaces or analyses, I want to align a jazz harmonic ontology with a corpus statistical epistemology as closely as possible.  Doing so may require re-configuring traditional ontological assumptions about harmony (jazz or otherwise).
@@ -51,45 +32,64 @@ Jazz theory manuals tend to emphasize a tripartite typology of chord types, wher
 \begin{quote}
 ``Triads are not necessarily normative.  In fact, they are relatively rare in some styles where three types of seventh chords are the most common harmonic entities (major-seventh, minor-seventh, and dominant-seventh)."\footnote{Martin 1980, p.\ 7.  Martin's dissertation is the most sustained, serious treatment of strict quality-centric chord category formation I have seen in the jazz literature.  For similar typological claims, see Mehegan and Levine.}
 \end{quote}
-As soon as Martin postulates these objects, he specifies that their traces in actual performance have particular properties: ``The perfect fifths within many jazz chords," Martin explains, ``are often unnecessary for the specification of harmonic type."\footnote{Ibid.}  Rather, the root, third, and seventh are assumed to be the primary determiners of chord identity.  An imagined jazz performer starts from a sequence of changes, envisions these crucial members of each chord, and then chooses additional notes to fill out or embellish each sonority.
+As soon as Martin postulates these objects, he specifies that their traces in actual performance have particular properties: ``The perfect fifths within many jazz chords," Martin explains, ``are often unnecessary for the specification of harmonic type."\footnote{Ibid.}  Rather, the root, third, and seventh are assumed to be the primary determiners of chord identity.  An imagined jazz performer starts from a sequence of chord symbols, envisions these crucial members of each chord, and then chooses additional notes to fill out or embellish each sonority.
 
 Most jazz manuals move on to offer nuanced advice regarding what notes to add.  Mark Levine's ``chart of the \emph{possible} notes that you can add to three-note minor seventh, dominant seventh, and major seventh voicings," shown in Figure~\ref{levineextensions}, is typical of the genre.\footnote{The quote and chart both come from Levine 1989, p.\ 33.}
 \begin{figure}
-	\centering
-	\includegraphics[width=3.1in]{levineextensions.jpg}
 	\caption{Mark Levine's chart of possible additions to the common three-note seventh chord voicings.}
 	\label{levineextensions}
+	\centering
+	\includegraphics[width=3.1in]{levineextensions.jpg}
 \end{figure}
 There are a variety of ways through which it might be possible connect this simple model to jazz performance data.  Translated into corpus-analytic language, these traditional chord-quality voicing rules can be tested against the data of the Yale Jazz MIDI Piano (YJaMP) corpus.  An algorithm may look for root-third-seventh voicings (with various added tones) as signs standing for the seventh chords Martin places at the bedrock of jazz syntax.
 
 In the presence of possible added tones, root determinations may be ambiguous or impossible to automate (or even hand-annotate consistently).  To sidestep this issue, I ask a simpler but analogous question: what chords occur in the YJaMP corpus which contain the three identifying chord tones listed above voiced in root-third-seventh ascending register within an octave?  For example, using a labeling system in which voicings are described by their semitonal distances above the bass note, what kinds of voicings contain $[0,4,10]$?
 
-\begin{figure}
-	\centering
-	\includegraphics[width=2.7in]{0410_tones.jpg}
-	\caption{Frequently-occurring corpus slices including $[0,4,10]$ voicing subsets.  These primarily include traditional dominant seventh chords with various added tones.  Note the unusual appearance of $[0,4,10,17]$.  On what basis do we teach students to ``avoid" this natural 11?  What is its nature?}
-	\label{[0,4,10]}
-\end{figure}
+\begin{table}
+\caption{Frequently-occurring corpus slices including $[0,4,10]$ voicing subsets.  These primarily include traditional dominant seventh chords with various added tones.  Note the traditionally unexpected appearance of $[0,4,10,17]$.  On what basis do we teach students to ``avoid" this natural 11?  What is its nature?}
+  \centering
+\begin{tabular}{l | l | l}
+\hline\hline
+Voicing & Counts & Additions \\ [0.5ex]
+\hline
+$[0, 4, 10]$ & 358 &  \\ 
+$[0, 4, 10, 19]$ & 62 & add \nth{5} \\ 
+$[0, 4, 10, 22]$ & 52 & double \nth{7} \\ 
+$[0, 4, 10, 15]$ & 42 & $\sharp$\nth{9} \\ 
+$[0,4,10,16]$ & 41 & double \nth{3} \\ 
+$[0,2,6,12]$ & 40 & double \nth{7} \\ 
+$[0,4,7,10]$ & 36 & add \nth{5} \\ 
+$[0,4,10,21]$ & 36 & add \nth{13} \\ 
+$[0,4,10,14]$ & 30 & add \nth{9} \\ 
+$[0,4,10,13]$ & 29 & add $\flat$\nth{9} \\ 
+$[0,4,10,17]$ & 23 & add \nth{11} \\ 
+$[0,4,10,20]$ & 21 & add $\sharp$\nth{5} \\ 
+$[0,4,10,18]$ & 21 & add $\sharp$\nth{11} \\ 
+$[0,4,10,26]$ & 20 & add \nth{9} \\ 
+$[0,4,10,28]$ & 20 & double \nth{3} \\[1ex]
+\hline
+\end{tabular}
+\label{[0,4,10]}
+\end{table}
 
-Figure~\ref{[0,4,10]} lists the most frequent voicings with dominant-seventh subsets.  To minimize reductive assumptions about non-harmonic tones, I search through ``salami slices" advocated by Quinn and White, na\"{i}ve verticalities agnostic about which pitches in a given stack should or can be disregarded.\footnote{For a full treatment of salami slice ideology, see Quinn and White [forthcoming].}  As an algorithm thinly ``slices" the YJaMP performance corpus, it tracks each appearance and disappearance of a pitch, treating each resulting verticality as a potential chord, regardless of its pitch content.\footnote{Ira Braus traces Quinn and White's usage of salami slices as musical metaphor back to comments by Ligeti; see Braus 2006.} The most frequent chord additions match recommendations like those of Figure~\ref{levineextensions} almost precisely: chord tones like root, third, fifth, and seventh are added or doubled; diatonic extensions like 9 and 13 are added; alterations like $\sharp 9$, $\flat 9$, $\sharp 5$, and $\sharp 11$ are common.  The only place where the table of common voicings appears to disagree with received wisdom is in the frequent appearance of $[0,4,10,17]$, an apparent natural 11 chord.  What is the status of this observed sonority?
+Table~\ref{[0,4,10]} lists the most frequent voicings with dominant-seventh subsets.  To minimize reductive assumptions about non-harmonic tones, I search through ``salami slices" advocated by Quinn and White, verticalities generated from a na\"{i}ve approach agnostic about which pitches in a given stack should or can be disregarded.\footnote{For a full treatment of salami slice ideology, see White and Quinn 2016.}  As an algorithm thinly ``slices" the YJaMP performance corpus, it tracks each appearance and disappearance of a pitch, treating each resulting verticality as a potential chord, regardless of its pitch content.\footnote{White and Quinn trace their use of salami slices to comments by Ligeti; see White and Quinn 2016 and Braus 2006.} The most frequent chord additions match recommendations like those of Figure~\ref{levineextensions} almost precisely: chord tones like root, third, fifth, and seventh are added or doubled; diatonic extensions like 9 and 13 are added; alterations like $\sharp 9$, $\flat 9$, $\sharp 5$, and $\sharp 11$ are common.  The only place where the table of common voicings appears to disagree with received wisdom is in the frequent appearance of $[0,4,10,17]$, an apparent natural 11 chord.  What is the status of this observed sonority?
 
 Levine, among many others, advocates against the ontological primacy of such sonorities.  Giving an explicit reason to discount this ``unusual" chord (but frequent slice) requires a kind of two-step ideological appeal to reduction like the following:
 \begin{enumerate}
 	\item This chord contains a dissonant or quality-ambiguating minor 9th between its third and eleventh, rendering it problematic and giving it some kind of unstable acoustical status.
 	\item The chord cannot fulfill its usual harmonic function as is: instead, it likely functions as some kind of passing or neighboring chord in the context of a less-problematic, more-normative dominant sonority.
 \end{enumerate}
-A corpus-supported analog to step (1) is unclear, and it would likely fall prey to Gjerdingen's analyst-bias objections.  Claims of problematic consonance and dissonance would require psycho-acoustical modeling, appealing to measurable properties of sounded chords and human responses to them.  Such studies are more common in the classical literature, but some jazz work in this direction has begun to appear.\footnote{Give some canonical examples like Krumhansl, but also jazz examples  like McGowan.}  Any corpus analytical claim regarding the impact of acoustical consonance on chord usage, if not accompanied by psycho-acoustical justification, would encode the analyst's expectations regarding jazz syntax into the data selection process, biasing any results meant to indicate how voicings appear in the corpus.  Pitch-based corpus statistics regarding which voicings are most common or important cannot be filtered for psycho-acoustic properties without biasing the results toward the whatever preconceptions the analyst chooses to encode.
+A corpus-supported analog to step (1) is unclear, and it would likely fall prey to Gjerdingen's analyst-bias objections.  Claims of problematic consonance and dissonance would require psycho-acoustical modeling, appealing to measurable properties of sounded chords and human responses to them.  Such studies are more common in the classical literature, but some jazz work in this direction has begun to appear.\footnote{The auditory perception foundations of this kind of work stretch back to Helmholtz 1863.  Scharf 1961 provides an overview of sound and critical band hearing research from the first half of the twentieth century, while publications like Plomp and Levelt 1965 aim this apparatus toward tonal consonance.  Longuet-Higgins 1976 is emblematic of the turn taken when computational resources meet acoustics in a musical context, while Parncutt 2012 provides a thorough treatment of modern psychoacoustics in common-practice classical music theory.  McGowan 2008 engages with Helmholtzian perception in the context of jazz consonance and dissonance, but it draws on few of the empirical or computational tools of the above sources.}  Any corpus analytical claim regarding the impact of acoustical consonance on chord usage, if not accompanied by psycho-acoustical justification, would encode the analyst's expectations regarding jazz syntax into the data selection process, biasing any results meant to indicate how voicings appear in the corpus.  Pitch-based corpus statistics regarding which voicings are most common or important cannot be filtered for psycho-acoustic properties without biasing the results toward the whatever preconceptions the analyst chooses to encode.
 
 A corpus of performances can be made to suggest lines of reasoning like (2); a tally of what kinds of voicings tend to follow $[0,4,10,17]$ provides a cursory suggestion as to its use.  If this voicing tends to progress to subsequent harmonies in a way strongly similar to (or different from) other dominant voicings, it may (or may not) stand in for Martin's dominant seventh chord category, despite Levine's intervallic contraindications.
 
 Figure~\ref{[0,4,10,17]} shows the most common voicing salami slices to appear within 50 slices of $[0,4,10,17]$.\footnote{Note that this flexible span reflects the appearance or disappearance of any single note 50 consecutive times.  At extremely quick tempos or during fast runs, 50 slices could pass in a couple of seconds; at slow tempos or during moments of stasis, the same number of slices might cover tens of seconds (or, formally, an arbitrarily long time).}  Each destination slice is indexed here by both its semitonal voicing structure and the number of semitones its bass lies above or below the bass note of $[0,4,10,17]$.  For example, the most common nearby destination slice is the voicing $[0,1,5]$, the seventh, root, and third of a major-seventh chord in registrally-ascending order (see the yellow line in Figure~\ref{[0,4,10,17]}). The seventh of this destination chord (found in the bass) lies a major third above the bass of the preceding $[0,4,10,17]$ chord (hence the initial 4-semitone entry in the relevant parenthesis).  While the slice counting algorithm has made no assumptions of any kind about key, this ``progression" implies traditional root motion down by fifth, indicating that $[0,4,10,17]$ most frequently appears in the context of dominant-tonic motion.  Crucially, this dominant-tonic motion typically occurs on a time scale of many (18-30) slices; during that span, the ``unusual" voicing has plenty of opportunities to ``resolve" or clarify its status: melodic motion might connect it to a more normative dominant-seventh, like $[0,4,10,14]$, or a consonant dominant triad, like $[0,16,19]$ (see the blue line in Figure~\ref{[0,4,10,17]}).  Due to the wide variety of destination voicings found after $[0,4,10,17]$, this is comparatively weak support for the two-step reduction outlined above, but it does indicate the form such an appeal might take in corpus analytic terms.  An analysis based solely on voicing structure produces an observation defying the properties of the voicing model, so the analyst turns to some behavioralist reduction criteria to normalize the results.
 
-%re-make this figure: it is lame.
 \begin{figure}
+	\caption{Following slice behavior for $[0,4,10,17]$ voicings.  The voicing appears most frequently in the neighborhood of $[0,1,5]$ voicings a major third up (yellow line), implying its participation in $V^7 \rightarrow I^2$ dominant-tonic progressions.  But salami slice adjacencies also imply intra-syntactic progressions at shorter scales; the blue line plots the appearance of $[0,16,19]$, the dominant triad sharing a bass note and root with the preceding $[0,4,10,17]$.}
+	\label{[0,4,10,17]}
 	\centering
 	\includegraphics[width=6in]{041017_behavior.jpg}
-	\caption{Following slice behavior for $[0,4,10,17]$ voicings.  The voicing appears most frequently in the neighborhood of $[0,1,5]$ voicings a major third up (yellow line), implying its participation in dominant progressions.}
-	\label{[0,4,10,17]}
 \end{figure}
 
 This procedure relies on a particular type of descriptive and explanatory model, and it still encodes analytical (and ontological) preconceptions regarding chord structure and harmonic progression.  To produce claims of this kind, there must exist a small number of frequently-employed chords of some ideologically-approved structure (i.e., seventh-chords with approved extensions and alterations) and a set of reduction techniques designed to render sounding sonorities of other types analytically (or at least syntactically) unimportant.  Identifying a voicing and deducing the properties of voicing types requires some minimal ontological framing, and other harmonic tasks may or may not be possible within the same frame.
@@ -105,9 +105,9 @@ The analytical pathway from abstract seventh chords to actual voicing statistics
 	\label{kockelman}
 \end{figure}
 
-This figure diagrams a flexible kind of ontological framing for semiotic processes involved in labeling, interpretation, and analysis in general.  At the top and bottom corners of this diamond, music analysis like that of the previous section places the abstract chord objects ($O$) postulated as harmonic categories (like Martin's ontologically-basic seventh chords) and the analytical agent seeking to identify, transform, and react to those objects ($A$).  The analyst does not observe the postulated objects directly, but rather through certain traces or signs ($S$) found in the performance data, be it acoustical (for a listening agent or pianist), visual (for a score analyst), or digital (for a corpus analyst).  The analyst observes these signed traces and produces interpretants ($I$) that make sense given the presumed existence of $O$.  These interpretants might be roman numerals that an analyst assigns to particular sonorities to represent the category of harmonic object to which they belong, or they may be expectations regarding subsequent objects which might be sounded in a performance, among other possibilities.
+This figure diagrams a flexible kind of ontological framing for semiotic processes involved in labeling, interpretation, and analysis in general.  At the top and bottom corners of this diamond, music analysis like that of the previous section places the abstract chord objects ($O$) postulated as harmonic categories (like Martin's ontologically-basic seventh chords) and the analytical agent seeking to identify, transform, and react to those objects ($A$).  The analyst does not observe the postulated objects ($O$) directly, but rather through certain traces or signs ($S$) found in the performance data, whether the engagement with those performances is acoustical (for a listening agent or pianist), visual (for a score analyst), or digital (for a corpus analyst).  The analyst observes these signed traces and produces interpretants ($I$) that make sense given the presumed existence of $O$.  These interpretants might be roman numerals that an analyst assigns to particular sonorities to represent the category of harmonic object to which they belong, or they may be expectations regarding subsequent objects which might be sounded in a performance, among other possibilities.
 
-In a very basic analysis, the analyst might encounter a root-third-seventh voicing like $[0,4,10]$ and interpret it as a sign $S$ for an abstract ``dominant seventh chord" object $O$.  The analyst might then apply a roman numeral interpretant like $V^7$ to a particular location in the score and begin looking for the next syntactically-appropriate chord.  For Kockelman, the interpretant ``makes sense in the context of $S$ from the standpoint of $A$."\footnote{Kockelman 2012, p.\ 17.}  The agent/analyst $A$ selects certain indices $S$ by turning signs into actions.  But Kockelman also describes the properties of the \emph{object} through a parallel and codetermined process: just as the interpretant $I$ makes sense from the standpoint of $A$ in the context of $S$, ``$I$ makes sense in the context of $S$ given the properties of $O$."  The resulting ``relation between relations" underpins semiotic processes of selection and significance, since the sense-making of $I$-given-$S$ requires and produces both a selecting agent and a significant object -- though the ontological structure from which the object $O$ arises can only be accessed, described, or interpreted by $A$ indirectly, through actions based on signs.
+In a very basic analysis, the analyst might encounter a root-third-seventh voicing like $[0,4,10]$ and interpret it as a sign $S$ for an abstract (and inherently unobservable) ``dominant seventh chord" object $O$.  The analyst might then apply a roman numeral interpretant like $V^7$ to a particular location in the score and begin looking for the next syntactically-appropriate chord.  For Kockelman, the interpretant ``makes sense in the context of $S$ from the standpoint of $A$."\footnote{Kockelman 2012, p.\ 17.}  The agent/analyst $A$ selects certain indices $S$ by turning signs into actions.  But Kockelman also describes the properties of the \emph{object} through a parallel and codetermined process: just as the interpretant $I$ makes sense from the standpoint of $A$ in the context of $S$, ``$I$ makes sense in the context of $S$ given the properties of $O$."  Here, $V^7$ only ``makes sense" in the context of $[0,4,10]$ if the roman numeral object has properties like identifiable root, chord structure, relationship to a key, surface segmentation, and so forth.  The resulting ``relation between relations" (the dotted lines of Figure~\ref{kockelman}) underpins semiotic processes of selection and significance, since the sense-making of $I$-given-$S$ requires and produces both a selecting agent and a significant object -- though the ontological structure from which the object $O$ arises can only be accessed, described, or interpreted by $A$ indirectly, through actions based on signs.
 
 The flexible framework of Figure~\ref{kockelman} applies to a huge variety of selection processes, including many contexts where musical actions are taken.  In the case of actual performance, a jazz vocalist may interpret heard sonorities $S$ as indicating that a pianist is playing a kind of dominant seventh chord object $O$, and the vocalist might then choose to sing certain notes well-suited to that chord and expect and prepare for certain kinds of (say, tonic) sonority to sound after a particular time delay.  The fact that these actions make sense from the perspective of the singer (given the original heard sonority) is thoroughly entangled with the fact that the resulting actions make sense with respect to the properties of $O$ given the presence of $O$'s significant indices $S$.
 
@@ -123,7 +123,7 @@ Kockelman's careful attention to signed indices and acted interpretants as integ
 Transformations of type (1) here correspond most directly to undergraduate-style harmony assignments, where student analysts map observed traces to stable, received chord categories.  Transformations of type (2) constitute much of the academic music theory literature, where professional analysts logically induce pitch-based patterns of behavior from a particular corpus given a mostly-stable set of ontological kinds.  Both of these modes of ontological transformativity are well-suited to corpus analysis relaying on the ``numerical methods and explicit algorithms" Gjerdingen describes as appropriate for two-thirds of his recipe.  Gjerdingen's bias objection primarily concerns transformations of type (3), where the categories signed and represented by the statistically-tallied indices themselves change.  And the avoidance of such changes is impossible, since selecting agents produce and are imbricated in their own ontologies -- to get any selection and response procedure off the ground, the analyst must encode some set of ontological assumptions.  Where Gjerdingen says this reveals a ``presentist or historicist bias," we might say that this reveals the necessity (and inescapability) of ontological framing in analytical processes.
 
 %aligning relations between relations
-If the properties of the object and the actions of the agent are entangled across a semiotic process of selection and significance, the signed indices to which the agent reacts may be framed in a variety of ways; analysis will not consist of unearthing pre-existing harmonic objects, but rather of framing a harmonic ontology in which the properties assigned to chord objects align with the interpretants produced by the agent(s).  Different agent-interpretant relations -- different types of action or expectation taken or embodied by the analyst -- may relate more directly to certain kinds of object-sign relation than to others.  This alignment of relations between relations guides the framing of this dissertation and results in a close focus on the relays between computational category formation and temporal statistics.
+If the properties of the object ($O$) and the actions of the agent ($A$) are entangled across a semiotic process of selection and significance, the signed indices ($S$) to which the agent reacts ($I$) may be framed in a variety of ways; analysis will not consist of unearthing pre-existing harmonic objects, but rather of framing a harmonic ontology in which the properties assigned to chord objects align with the interpretants produced by the agent(s).  Different agent-interpretant relations -- different types of action or expectation taken or embodied by the analyst -- may relate more directly to certain kinds of object-sign relation than to others.  This alignment of relations between relations guides the framing of this dissertation and results in a close focus on the relays between computational category formation and temporal statistics.
 
 \section{Harmonic objects and interpretants}
 %lay out several analytical interpretants and the object-sign framings best related to them
@@ -131,13 +131,13 @@ Modes of harmonic analysis with different interpretants and objects can be frame
 \begin{table}%[h]
   \caption{Four framings of harmonic analysis generating (and requiring) different semiotic ontologies.}
   \centering
-\begin{tabular}{p{1.75in} |p{2in} | p{2in}}
+\begin{tabular}{>{\raggedright}p{1.6in} |>{\raggedright}p{1.8in} | >{\raggedright\arraybackslash}p{1.8in}}
 \hline\hline
 Interpretant & Signed Indices & Harmonic Object \\ [0.5ex]
 \hline
-Identifying a voicing structure & Intervals above the bass at a particular time & Pitch verticalities \\
-Postulating a scale & Pitch class frequencies over time & Macroharmonic collections \\
-Assigning a traditional roman numeral & Keys, pitch-class sets, reduction rules & Tertian scale degree stacks \\
+Identifying a voicing structure & Intervals above the bass at a particular time & Pitch verticalities \\ \hline
+Postulating a scale & Pitch class frequencies over time & Macroharmonic collections \\ \hline
+Assigning a traditional roman numeral & Keys, pitch-class sets, reduction rules & Tertian scale degree stacks \\ \hline
 %Choosing a key & Scales and articulated centricity & Tonics and modes \\
 Interpreting a chord's syntactic function & Scale degree sets over time & Categories of similar scale degree sets \\[1ex]
 \hline
@@ -148,7 +148,7 @@ An analyst seeking to identify a type of voicing, following the directions of Ma
 
 On another temporal scale, an analyst postulating a scale underpinning a certain passage of music assumes (and creates) limited macroharmonic collections of pitch classes that can be related to musical surface signs in particular ways; if pitch-class distributions can lead the analyst to produce a scale, then the scale object can be given such a surface distribution as a property or signed index.  In this case, as in the voicing case, the method by which the agent produces an interpretant from signed indices aligns with the properties assigned to the objects in the resulting semiotic ontology.
 
-To assign a roman numeral or interpret a chord's syntactic function requires a more complex ontology, where the semiotic relations between the objects' properties and the agents' interpretants become less direct.  For a traditional roman numeral to ``make sense" to an analyst, she must postulate the existence of keys and pitch-class sets standing in some relation to one another.  To label the (untransposed) pitch class set $[0,4,10]$ as $V^7$ is also to assume (or create) a kind, ``$V^7$," connected to signed indices in some meaningful way.  The nature of this connection, the sense-making of ``$I$ in the presence of $S$ given the properties of $O$," is codeterminate with the with the sense-making of ``$I$ in the presence of $S$ from the perspective of $A$."  Put more provocatively, the precise way in which the analyst turns surface signs into interpretants (analytical symbols and expectations) may be thought to generate (and respond to) the way harmonic object categories relate to their signed indices (pitch and temporal properties).
+To assign a roman numeral or interpret a chord's syntactic function requires a more complex ontology, where the semiotic relations between the objects' properties and the agents' interpretants become less direct.  For a traditional roman numeral to ``make sense" to an analyst, she must postulate the existence of keys and pitch-class sets standing in some relation to one another.  To label the (untransposed) pitch class set $[0,4,10]$ as $V^7$ is also to assume (or create) a kind, ``$V^7$," connected to signed indices in some meaningful way.  The nature of this connection, the sense-making of ``$I$ in the presence of $S$ given the properties of $O$," is codeterminate with the with the sense-making of ``$I$ in the presence of $S$ from the perspective of $A$."  The precise way in which the analyst turns surface signs into interpretants (analytical symbols and expectations) may be thought to generate (and respond to) the way harmonic object categories relate to their signed indices (pitch and temporal properties) -- undermining any assumptions regarding the ``real" or analyst-independent nature of chord categories $O$.
 
 On this basis, roman numeral analysis as an interpretive act fractures into several separate semiotic processes with their own distinct ontological conditions.  If the analytical interpretant produced ($V^7$) makes sense to analyst $A$ because it consists of a tertian stack of dominant seventh quality built on scale degree $\hat{5}$ of the local key, then the semiotic kind to which the individual sonority has been assigned carries properties based solely on its pitch class structure and relation to a key.  But if the same analytical interpretant is produced through some other relation to pitch and time indices, the kind $V^7$ may participate in an entirely different ontology permitting entirely different properties and modes of proof.  In particular, if $V^7$ makes sense to analyst $A$ \emph{because the observed sonority ``behaves like" other chords of kind $V^7$}, the ontological structure embedding the kind $V^7$ changes quite radically.  The relation between kind $V^7$ and its indices can no longer be captured by pitch class structure and key relation; instead, it requires additional -- and potentially conflicting -- knowledge about temporal progression or syntactic function.  As the last line of Table~\ref{frames} indicates, the interpretation of a chord's syntactic function treats more than a sonority's pitch structure as indices; such an interpretant also involves the agent's knowledge regarding what chords tend to succeed the given sonority at certain time scales.
 
@@ -161,55 +161,97 @@ The remaining sections of this chapter provide examples for how such algorithmic
  
 \section{Voicings revisited}
 %voicings in general, supporting and complicating Levine with more ontology
-To return to the voicing statistics of Figures~\ref{[0,4,10]} and \ref{[0,4,10,17]}, we can now distinguish their different framings.  In the first case, the algorithm-as-analyst produced frequency statistics of different $[0,4,10]$ superset voicings as interpretants.  As a necessary correlate to these statistics, it assumed (or created) an ontology of voicing objects with particular properties: members of the category tallied contain an $[0,4,10]$ pitch subset, where the sounding pitches necessarily overlap in time (though they need not all begin at the same moment).  There are many subtle consequences of this ontology, like the fact that it captures voicings which may not have traditional syntactic significance (like $[0,4,10,17]$), or that a particular voicing might belong to a large number of categories.  Figures~\ref{[0,4,11]} and \ref{[0,3,10]} provide other interpretants from within the same framing: frequently-occurring corpus slices containing $[0,4,11]$ (major seventh) or $[0,3,10]$ (minor seventh) subsets.  These statistics contain further ambiguities of the same kind, but they generally support the added voice instructions given by Levine, among others.
+To return to the voicing statistics of Tables~\ref{[0,4,10]} and \ref{[0,4,10,17]}, we can now distinguish their different framings.  In the first case, the algorithm-as-analyst produced frequency statistics of different $[0,4,10]$ superset voicings as interpretants.  As a necessary correlate to these statistics, it assumed (or created) an ontology of voicing objects with particular properties: members of the category tallied contain an $[0,4,10]$ pitch subset, where the sounding pitches necessarily overlap in time (though they need not all begin at the same moment).  There are many subtle consequences of this ontology, like the fact that it captures voicings which may not have traditional syntactic significance (like $[0,4,10,17]$), or that a particular voicing might belong to a large number of categories.  Tables~\ref{[0,4,11]} and \ref{[0,3,10]} provide other interpretants from within the same framing: frequently-occurring corpus slices containing $[0,4,11]$ (major seventh) or $[0,3,10]$ (minor seventh) subsets.  These statistics contain further ambiguities of the same kind, but they generally support the added voice instructions given by Levine, among others.
 
-%this needs cleaning or typesetting, and I'll need to cite/explain upper structure voicings
-\begin{figure}%[h!]
-	\centering
-	\includegraphics[width=5in]{0411_tones.jpg}
-	\caption{Frequently-occurring corpus slices including $[0,4,11]$ voicing subsets.  These include traditional major seventh chords with various added tones, but also other traditional (``sus") and non-traditional ($[0,6,10,17]$) chords.}
-	\label{[0,4,11]}
-\end{figure}
+%Check the text for whether I cite/explain upper structure voicings?
+\begin{table}
+\caption{Frequently-occurring corpus slices including $[0,4,11]$ voicing subsets.  These include traditional major seventh chords with various added tones, but also other traditional (``sus") and non-traditional ($[0,6,10,17]$) chords.}
+  \centering
+\begin{tabular}{l | l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0, 4, 11]$ &	197 & \\ 		
+$[0, 4, 7, 11]$ &	144	& Add \nth{5}	\\ 	
+$[0, 4, 8, 11]$	& 124	& Add $\sharp$5 or $\flat$6\\ 	
+$[0, 4, 6, 11]$ &	115	& Add $\sharp$4	\\ 	
+$[0, 4, 5, 9, 16]$ &	89	& \nth{2} inversion, add \nth{5}, doubled \nth{7}\\ 	
+$[0, 15, 19, 22, 26]$ &	80	 & Minor \nth{7}, add \nth{9}\\ 	
+$[0, 15, 19, 26]$ &	62	& Minor \nth{7}, add \nth{9}\\ 	
+$[0, 5, 9, 16]$ &	61	& \nth{2} inversion, add \nth{5}	\\ 	
+$[0, 1, 5, 12]$ &	57	& \nth{3} inversion	\\ 	
+$[0, 6, 10, 17]$ &	57	& (?)	\\ 	
+$[0, 16, 20, 24, 27]$ &	52 & US $\flat$VI	\\ 	
+$[0, 4, 8, 12, 15]$ &	51	& US $\flat$VI	\\ 	
+$[0, 10, 14, 17, 21]$ &	49	& Sus chord	\\ 	
+$[0, 10, 14, 21]$ &	48	& Sus chord	\\ 	
+$[0, 8, 12, 16, 19]$ &	45	& (?)\\ 	
+$[0, 2, 4, 11]$ &	44 &	Add \nth{9}	\\ 	
+$[0, 10, 14, 18, 21]$ &	38 & US II	\\ 	
+$[0, 1, 5, 8, 12]$ &	38 & Doubled \nth{7}\\[1ex]	 
+\hline
+\end{tabular}
+\label{[0,4,11]}
+\end{table}
 
-%if I use this and the above, I'll also need to explain or at least cite sus chords
-\begin{figure}%[h!]
-	\centering
-	\includegraphics[width=5in]{0310_tones.jpg}
-	\caption{Frequently-occurring corpus slices including $[0,3,10]$ voicing subsets.  These include traditional minor seventh chords, with various added tones, as well as several voicings of ``sus" chords.}
-	\label{[0,3,10]}
-\end{figure}
+\begin{table}
+\caption{Frequently-occurring corpus slices including $[0,3,10]$ voicing subsets.  These include traditional minor seventh chords, with various added tones, as well as several voicings of ``sus" chords.}
+  \centering
+\begin{tabular}{l | l | l}
+\hline\hline
+Voicing & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0, 3, 10]$ &	198	& \\ 
+$[0, 7, 10, 17]$ &	93	& Sus\\ 
+$[0, 3, 7, 10]$ &	91	& Add \nth{5}\\ 
+$[0, 3, 5, 10]$ &	84	& Add \nth{4}(?)\\ 
+$[0, 7, 10, 14, 17]$ &	58	& Sus\\ 
+$[0, 4, 7, 14]$ &	46	& Major \nth{7}, add \nth{9}\\ 
+$[0, 2, 5, 12]$ &	41	& Doubled \nth{7}\\ 
+$[0, 7, 10, 12, 14, 17]$ &	41	& Sus\\ 
+$[0, 7, 10, 14, 15, 17]$ &	39	& Minor \nth{11} or Sus\\ 
+$[0, 3, 10, 15]$ &	38	& Doubled \nth{3}\\ 
+$[0, 3, 10, 17]$ &	32	& \nth{11}\\ 
+$[0, 3, 5, 7, 10]$ &	29	& Add \nth{4}(?)\\ 
+$[0, 3, 7, 10, 14]$ &	29	& Add \nth{5} and \nth{9}\\ 
+$[0, 16, 19, 23, 26]$ &	28	& Major \nth{9}\\ 
+$[0, 3, 10, 14]$ &	28	& Add \nth{9} \\[1ex]	 
+\hline
+\end{tabular}
+\label{[0,3,10]}
+\end{table}
 
-The categories produced by the algorithmic statistics carry no necessary syntactic properties, since the tallying process relied only on snapshots pitch alignment in time.  Even the quality of the resulting sonorities cannot be consistently determined; without knowledge of the local key and harmonic context, the root of a voicing like $[0,4,8,11]$ from Figure~\ref{[0,4,11]} could be the bottom voice (0), in which case the chord contains a major third (4), sharp fifth (8), and major seventh (11), or it could be the second from bottom voice (4), in which case the chord contains a major third (8), perfect fifth (11), and flattened sixth (0).  There are good reasons to prefer the former interpretation over the latter, but the flexibility of tertian-stack quality and root identification renders both possible.  Since the voicing tally algorithm knows nothing about root or quality label, it remains agnostic regarding many potential chord properties: membership in the superset voicing category $[0,4,11]$ does not require major seventh quality, any particular root, or any particular syntactic function.
+The categories produced by the algorithmic statistics carry no necessary syntactic properties, since the tallying process relied only on snapshots pitch alignment in time.  Even the quality of the resulting sonorities cannot be consistently determined; without knowledge of the local key and harmonic context, the root of a voicing like $[0,4,8,11]$ from Table~\ref{[0,4,11]} could be the bottom voice (0), in which case the chord contains a major third (4), sharp fifth (8), and major seventh (11), or it could be the second from bottom voice (4), in which case the chord contains a major third (8), perfect fifth (11), and flattened sixth (0).  There are good reasons to prefer the former interpretation over the latter, but the flexibility of tertian-stack quality and root identification renders both possible.  Since the voicing tally algorithm knows nothing about root or quality label, it remains agnostic regarding many potential chord properties: membership in the superset voicing category $[0,4,11]$ does not require major seventh quality, any particular root, or any particular syntactic function.
 
 The category membership nevertheless implies some of those properties to a human analyst in a productive way, but this is to partake of a separate semiotic process diagrammed in Figure~\ref{kockelman_2dia}, taken from Kockelman 2012.  The tallying algorithm $A_1$ observes voicing indices $S_1$ and produces superset statistics $I_1$ which make sense given the intervallic properties of the shared subset being tallied $O_1$.  The subsequent human analyst $A_2$ observes voicing superset statistics $S_2 = I_1$ and produces interpretants $I_2$ (like the quality label ``major seventh chord") which make sense in the context of the voicing statistics \emph{and} some embodied or enminded assumptions regarding root assignment or voice-leading reduction.  Since these properties are involved in $A_2$'s production of $I_2$, we might view them as generating signed objects $O_2$ with entirely different properties from $O_1$.  The communication between algorithmic agent and human agent can (or perhaps \emph{must}) produce different ontological framings.
 
 \begin{figure}%[h]
-	\centering
-	\includegraphics[width=3.5in]{kockelman_2dia.png}
 	\caption{Figure 2.7 from Kockelman 2012, a doubly-semiotic model for ``communication between conspecifics."  If $A_1$ and $A_2$ are a voicing tally algorithm and a human analyst, the statistical point of intersection $I_1 = S_2$ connects two processes generating different objects $O_1$, $O_2$.}
 	\label{kockelman_2dia}
+	\centering
+	\includegraphics[width=3.5in]{kockelman_2dia.png}
 \end{figure}
 
 The potential for misinterpretation here, for ``parasitic" processes redirecting $I_1$ to some end quite different from that intended or produced by $A_1$, is clear, and it is under this condition that human-run corpus analysis must operate.\footnote{In Kockelman's terms, parasitic processes redirect or reframe semiotic processes in a variety of ways.  As formalized on Kockelman 2012, p.\ 15, an object ``considered as a means to an end" (that is, as a tool for mapping $S$ to $I$) ``is a second (or an intermediary), but insofar as it implies (embodies or indexes) other ends it might be directed to serve... it is a third (or mediator).  The parasite is whatever inhabits such implications."  I will return to the implications of this claim in the concluding chapter.}  The above statistics for root-third-seventh voicing subsets imply that Levine's added tone descriptions are apt, but the price of escaping circularity in data selection is ontological instability.
 
-Just as na\"{i}ve voicing superset tallies can be made to lend performance data driven support to three-note voicing and added tone prescriptions, the same algorithm can connect Levine's ``A" and ``B" left-hand voicings to potential chord qualities.  In chapter seven of his \emph{Jazz Piano Book}, Levine formalizes a harmonic progression technique designed to project $ii$-$V$-$I$ chord qualities through efficient voice leading within a single (typically left) hand voicing.  Compacting the chord changes into a single hand ``gives your right hand the freedom to play the melody or improvise," and Levine cites their occasional use by Tatum, Garner, Jamal, and Garland and attributes their codification to Bill Evans and Wynton Kelly.\footnote{Levine 1989, p.\ 41.}  The left-hand voicings (LHV) present a challenge to traditional tertian-stack analysis, since they lack what Levine perceives to be the ``root" of each chord.  While a bass player may pick up the roots during combo gigs, the LHV have nevertheless become a fixture of solo piano performance, and they appear frequently in the YJaMP corpus.  The two sets of efficient LHV from Levine's chapter seven are reproduced in Figures~\ref{levine_Avcg} and \ref{levine_Bvcg}.
+Just as na\"{i}ve voicing superset tallies can be made to lend performance data driven support to three-note voicing and added tone prescriptions, the same algorithm can connect Levine's ``A" and ``B" left-hand voicings to potential chord qualities.  In chapter seven of his \emph{Jazz Piano Book}, Levine formalizes a harmonic progression technique designed to project $ii$-$V$-$I$ chord qualities through efficient voice leading within a single (typically left) hand voicing.  Compacting the chord changes into a single hand ``gives your right hand the freedom to play the melody or improvise," and Levine cites their occasional use by Tatum, Garner, Jamal, and Garland and attributes their codification to Bill Evans and Wynton Kelly.\footnote{Levine 1989, p.\ 41.}  The left-hand voicings (LHV) present a challenge to traditional tertian-stack analysis, since they lack what Levine perceives to be the ``root" of each chord.\footnote{This is not to say that no theoretical justifications for the LHV in tertian contexts exist in the literature; Levine himself offers specific contextual justifications, while Quinn 2017 provides a general framework flexible enough to account for the LHV with generic intervals and contrapuntal rules (see \S 4).}  While a bass player may pick up the roots during combo gigs, the LHV have nevertheless become a fixture of solo piano performance, and they appear frequently in the YJaMP corpus.  The two sets of efficient LHV from Levine's chapter seven are reproduced in Figures~\ref{levine_Avcg} and \ref{levine_Bvcg}.
 
 \begin{figure}%[h]
-	\centering
-	\includegraphics[width=4in]{Levine_Avoicings.png}
 	\caption{The ``A" left-hand voicings from Figure 7-2 of Levine 1989.}
 	\label{levine_Avcg}
+	\centering
+	\includegraphics[width=4in]{Levine_Avoicings.png}
 \end{figure}
 \begin{figure}%[h]
-	\centering
-	\includegraphics[width=4in]{Levine_Bvoicings.png}
 	\caption{The ``B" left-hand voicings from Figure 7-4 of Levine 1989.}
 	\label{levine_Bvcg}
+	\centering
+	\includegraphics[width=4in]{Levine_Bvoicings.png}
 \end{figure}
 
 The intervallic structures of the A and B voicings differ from the qualities of the chords Levine intends them to index, represent, or support.  The $FM^7$ chords meant to be played in the syntactic context of ``$D-7$" can be represented with semitonal voicings $[0,4,7,11]$ and $[0,4,5,9]$, and the $G7$ voicings lack a $G$ but sound the appropriate $BF$ tritone alongside presumed chordal 9ths and 13ths.  Levine's imagined pianists run the semiotic analytical process backwards, in a way: the pianist $A$ sees chord symbols like $D-7$ or $G7$ on a lead sheet and produces voicings as interpretants.  These voicings make sense in the context of the chord symbols from the perspective of the pianist given categorical objects signed or indexed by the chord symbols: $D-7$ and $G7$ must refer to flexible collections of notes or chords for which the A and B voicings serve as adequate (or at least acceptable) responses.  Pianist-analyst communication, along these lines, might be mapped back onto Figure~\ref{kockelman_2dia}; in the left diamond, the pianist $A_1$ turns lead sheet signs into voicings ($S_1 \rightarrow I_1$), while in the right diamond, the analyst $A_2$ turns voicings back into chord symbols of some kind ($I_1 = S_2 \rightarrow I_2$).  The alignment of the framed objects $O_1$ and $O_2$ depends on the particular ways in which $A_1$ and $A_2$ make sense of their interpretants within particular (and perhaps quite different) ontologies.
 
-To attempt to tally the appearances of Levine's left-hand voicings in YJaMP is to interpose (at least) a third diamond -- and a third agent -- into the middle of the communicative semiotic chain.  Pianist $A_1$ turns many chord symbols into many voicings; algorithm $A_2$ turns many voicings into statistics regarding common supersets; analyst $A_3$ turns those statistics into observations regarding added tones, chord quality, and categories of substitutability.  Far from collapsing the distinction between $O_1$ and $O_2$, numerical models here multiply it.  We might be inclined to tack on yet another diamond before the others, where a tune writer turns imagined, composed, or improvised sonorities into lead sheet symbols-- in which case the entire communicative enterprise might suggest a kind of philosophical fictionalism, where each agent's actions are embedded in an ontology appealing to certain kinds of harmonic objects as a convenient way to facilitate the production and communication of their own interpretants.\footnote{Embracing a music theoretical fictionalism similar to Hartry Field's nominative philosophy of mathematics would amount to claiming that roman numeral models (or chord categorical claims, more generally) provide a reliable and convenient communicative framework consisting of literal falsehoods.  (See Field 1980, \emph{Science Without Numbers}, especially since music theory seems to rely more heavily on first-order logic than second-order, the quantification of which generally harms Field's construction.)  In Kockelman's terms, this would be a very high mode of ontological transformativity spurred by semiotic framing.}  All this to say: using corpus statistics to assess the appropriateness of the left-hand voicings as descriptors of piano performance is like standing on a stool balanced on a chair placed on a crooked floor.\footnote{Passionate defense or criticism of musical corpus analysis seems to depend on whether one thinks the analyst in this precarious position is trying to reach the ceiling or the floor.}  So it is deceptive and surprising how straight-forward the results appear.
+To attempt to tally the appearances of Levine's left-hand voicings in YJaMP is to interpose (at least) a third diamond -- and a third agent -- into the middle of the communicative semiotic chain.  Pianist $A_1$ turns many chord symbols into many voicings; algorithm $A_2$ turns many voicings into statistics regarding common supersets; analyst $A_3$ turns those statistics into observations regarding added tones, chord quality, and categories of substitutability.  Far from collapsing the distinction between $O_1$ and $O_2$, numerical models here multiply it.  We might be inclined to tack on yet another diamond before the others, where a tune writer turns imagined, composed, or improvised sonorities into lead sheet symbols-- in which case the entire communicative enterprise might suggest a kind of philosophical fictionalism, where each agent's actions are embedded in an ontology appealing to certain kinds of harmonic objects as a convenient way to facilitate the production and communication of their own interpretants.  Embracing a music theoretical fictionalism similar to Hartry Field's nominative philosophy of mathematics would amount to claiming that roman numeral models (or chord categorical claims, more generally) provide a reliable and convenient communicative framework consisting of literal falsehoods.\footnote{See Field 1980, \emph{Science Without Numbers}, especially since music theory seems to rely more heavily on first-order logic than second-order, the quantification of which generally harms Field's construction.)}  To adopt complete skepticism regarding chord categories as referring to anything existing independently in the real world would amount to a very high mode of ontological transformativity, in Kockelman's terms.\footnote{While acceptance of this position is not strictly required by my project here, I align myself in this direction, and I think it can be read out of work like \S 1 of Quinn 2017}  All this to say: using corpus statistics to assess the appropriateness of the left-hand voicings as descriptors of piano performance is like standing on a stool balanced on a chair placed on a crooked floor.\footnote{Passionate defense or criticism of musical corpus analysis seems to depend on whether one thinks the analyst in this precarious position is trying to reach the ceiling or the floor.}  So it is deceptive and surprising how straight-forward the results appear.
 
 \begin{table}%[h]
   \caption{Supersets of of Levine's $ii$ ``A" left-hand voicing (LHV) $[0,4,7,11]$.}
@@ -254,15 +296,15 @@ Figure~\ref{a_V_lhv} provides a simpler statistical portrait of the supersets fo
 Voicing & Counts & Potential interpretation \\ [0.5ex]
 \hline
 $[0,4,6,11]$ & 160 & LHV \\
-$[0,4,6,11,18]$ & 31 & voice 3 doubled \\
-$[0,4,6,11,23]$ & 28 & voice 4 doubled \\
+$[0,4,6,11,18]$ & 31 & Voice 3 doubled \\
+$[0,4,6,11,23]$ & 28 & Voice 4 doubled \\
 $[0,2,4,6,11]$ & 23 & LHV + added root = dominant seventh (9,13) \\
-$[0,4,6,11,16]$ & 22 & voice 2 doubled \\
+$[0,4,6,11,16]$ & 22 & Voice 2 doubled \\
 $[0,4,6,11,21]$ & 18 & LHV of $V$: added fifth \\
 $[0,10,14,16,21]$ & 16 & LHV + added root = dominant seventh (9,13) \\
 $[0,4,6,11,26]$ & 14 & LHV + added root = dominant seventh (9,13) \\
 $[0,4,6,11,20]$ & 14 & LHV of $V$: added \# 11 \\
-$[0,1,5,7,12]$ & 13 & voice 1 doubled \\[1ex]
+$[0,1,5,7,12]$ & 13 & Voice 1 doubled \\[1ex]
 \hline
 \end{tabular}
 \label{a_V_lhv}
@@ -276,12 +318,12 @@ $[0,1,5,7,12]$ & 13 & voice 1 doubled \\[1ex]
 Voicing & Counts & Potential interpretation \\ [0.5ex]
 \hline
 $[0,4,5,9]$ & 476 & Major seventh or $ii$ LHV \\
-$[0,4,5,9,16]$ & 124 & voice 2 doubled \\
+$[0,4,5,9,16]$ & 124 & Voice 2 doubled \\
 $[0,4,5,9,19]$ & 107 & $ii$ LHV: added 11 or M7 add 9 \\
-$[0,4,5,9,21]$ & 87 & voice 4 doubled \\
-$[0,4,5,9,17]$ & 69 & voice 3 doubled \\
-$[0,4,5,9,28]$ & 67 & voice 2 doubled \\
-$[0,7,11,12,16]$ & 65 & voice 3 doubled \\
+$[0,4,5,9,21]$ & 87 & Voice 4 doubled \\
+$[0,4,5,9,17]$ & 69 & Voice 3 doubled \\
+$[0,4,5,9,28]$ & 67 & Voice 2 doubled \\
+$[0,7,11,12,16]$ & 65 & Voice 3 doubled \\
 $[0,10,14,15,19]$ & 65 & $ii$ LHV: added root \\[1ex]
 \hline
 \end{tabular}
@@ -297,10 +339,10 @@ Voicing & Counts & Potential interpretation \\ [0.5ex]
 \hline
 $[0,5,6,10]$ & 62 & $V$ LHV \\
 $[0,5,6,10,20]$ & 17 & LHV + added root = dominant seventh \\
-$[0,6,11,12,16,20,23]$ & 15 & voice 3 doubled; if $V$ LHV: added \# 11, 13 \\
-$[0,5,6,10,18]$ & 10 & voice 3 doubled \\
-$[0,5,6,10,17]$ & 10 & voice 2 doubled \\
-$[0,5,6,10,29]$ & 10 & voice 2 doubled \\
+$[0,6,11,12,16,20,23]$ & 15 & Voice 3 doubled; if $V$ LHV: added \# 11, 13 \\
+$[0,5,6,10,18]$ & 10 & Voice 3 doubled \\
+$[0,5,6,10,17]$ & 10 & Voice 2 doubled \\
+$[0,5,6,10,29]$ & 10 & Voice 2 doubled \\
 $[0,5,6,10,27]$ & 8 & $V$ LHV: added fifth \\[1ex]
 \hline
 \end{tabular}
@@ -334,9 +376,13 @@ Armed with these (or similar subsequent) major and minor key profiles, key-finde
 %first: the perpexity-based segmentation process
 These inputs correlate to a segmentation problem, a parameterization problem, and an optimization problem, respectively.  While some studies approach segmentation (1) with broad heuristics, like using the pitches of an entire piece (Krumhansl 1990) or the first and last 8 measures of each piece (Albrecht \& Shanahan 2013), others chop each piece into many parts and assign a probable key to each (Temperley 2007, White 2013).  As Temperley notes, segmenting a piece into many consecutive ``windows" allows a key-finding model the flexibility to identify modulations.\footnote{See Temperley 1999, pp.\ 78-81.}  But while Temperley makes a convincing case for the necessity of windowed segmentation in key finding, he provides no real heuristic for the determination of window size.\footnote{See Temperley 1999, p.\ 81, for example, where ``Segments of about 1 measure -- typically between 1 and 2 s long -- proved to be about optimal..."  Temperley 2007, among others, continues with this heuristic.}  Most windowed key-finding algorithms choose a set number of measures, beats, or note onsets as an appropriate window, despite Temperley's caveat that ``[t]his also means that the tempi chosen for pieces may affect the program's analysis."\footnote{Ibid., and see also White and Quinn 2016, where the authors employ a window eight quarter notes in duration.  Sliding these fixed windows through the corpus with an incrementing interval of a quarter note allows White and Quinn to determine modulations over durations shorter than eight quarters, a feature I will return to below.}
 
-Setting a window size by measures or beats runs the risk of attempting key assignments for segments of radically different cardinality.  Fortunately, a performance corpus like YJaMP affords the examination of timing data taken directly from note onsets, bypassing notational questions regarding measure lines, beats, or notated tempi.  A simple algorithm\footnote{This windowing code and other key-finding methods discussed here are available at \href{github.com/andrewdjones/YJaMP_Analysis}{github.com/andrewdjones/YJaMP\_Analysis} .}  Figure~\ref{cardinalities} displays the output of a simple counting algorithm; for temporal window sizes of 400ms, 800ms, 1.6s, and 3.2s, the algorithm tallies the number of windows with each pitch-class cardinality corpus wide.  On average, 400ms windows tend to capture pitch-class sets of cardinality 3-5, the smallest cardinalities at which we might expect to find traditional chord objects carrying harmonic information, while windows of longer duration gradually increase in average cardinality.  Windows of 1.6 seconds tend to contain about 7 pitch classes -- the start of what we might call the scalar regime -- and 3.2 second windows begin to approach the 12-tone aggregate.
+Setting a window size by measures or beats runs the risk of attempting key assignments for segments of radically different cardinality.  Fortunately, a performance corpus like YJaMP affords the examination of timing data taken directly from note onsets, bypassing notational questions regarding measure lines, beats, or notated tempi.    Figure~\ref{cardinalities} displays the output of a simple counting algorithm;\footnote{This windowing code and other key-finding methods discussed here are available at \href{github.com/andrewdjones/YJaMP_Analysis}{github.com/andrewdjones/YJaMP\_Analysis}.} for temporal window sizes of 400ms, 800ms, 1.6s, and 3.2s, the algorithm tallies the number of windows with each pitch-class cardinality corpus wide.  On average, 400ms windows tend to capture pitch-class sets of cardinality 3-5, the smallest cardinalities at which we might expect to find traditional chord objects carrying harmonic information, while windows of longer duration gradually increase in average cardinality.  Windows of 1.6 seconds tend to contain about 7 pitch classes -- the start of what we might call the scalar regime -- and 3.2 second windows begin to approach the 12-tone aggregate.
 
-%cardinality at time scale stats?
+The smooth logic of these curves hides reasons for the key-finder to worry.  If the corpus is segmented into 400ms segments, some of them will contain only two pitch classes -- likely too few for any meaningful key assignment -- while others contain seven or eight.  Algorithms segmenting windows based on a particular number of note onsets might seem to solve the problem, but they prove highly sensitive to repetitions and decorative figurations.\footnote{See Chapter 6 of Temperley 2007 for an example of repetition-sensitivity for small windows.  While Temperley advocates ignoring repetitions to mitigate the problem, I retain this information and adjust the window sizes accordingly.}
+
+To account for both disparities, I employ a key-finding algorithm with a variable window size set through distributional means.  Collections of pitches well-suited to key-finding will contain an instance or two of several pitch classes, consisting neither of one pitch class (potentially repeated many times) nor the undifferentiated aggregate.  If all twelve pitch-classes appear, they should appear with different relative frequencies, or else the key-finder will make a pseudo-random choice.  Rather than requiring a particular number of notes per window, my key-finding algorithm calculates the average perplexity of segmented pitch-class distributions for a range of possible window sizes for each tune; it then selects whatever window size results in an average perplexity closest to that of the key profiles.
+
+%cardinality at time scale stats (could be remade to look better)
 \begin{landscape}
 \begin{figure}
 	\centering
@@ -345,10 +391,6 @@ Setting a window size by measures or beats runs the risk of attempting key assig
 	\label{cardinalities}
 \end{figure}
 \end{landscape}
-
-The smooth logic of these curves hides reasons for the key-finder to worry.  If the corpus is segmented into 400ms segments, some of them will contain only two pitch classes -- likely too few for any meaningful key assignment -- while others contain seven or eight.  Algorithms segmenting windows based on a particular number of note onsets might seem to solve the problem, but they prove highly sensitive to repetitions and decorative figurations.\footnote{See Chapter 6 of Temperley 2007 for an example of repetition-sensitivity for small windows.  While Temperley advocates ignoring repetitions to mitigate the problem, I retain this information and adjust the window sizes accordingly.}
-
-To account for both disparities, I employ a key-finding algorithm with a variable window size set through distributional means.  Collections of pitches well-suited to key-finding will contain an instance or two of several pitch classes, consisting neither of one pitch class (potentially repeated many times) nor the undifferentiated aggregate.  If all twelve pitch-classes appear, they should appear with different relative frequencies, or else the key-finder will make a pseudo-random choice.  Rather than requiring a particular number of notes per window, my key-finding algorithm calculates the average perplexity of segmented pitch-class distributions for a range of possible window sizes for each tune; it then selects whatever window size results in an average perplexity closest to that of the key profiles.
 
 %perplexity and entropy
 Perplexity, alongside its information-theoretical partner entropy, can be used to provide a measure of the diversity or disorder of a probability distribution.  A perfectly flat pitch class distribution, which would resemble a horizontal line on Figure~\ref{krumhansl}, corresponds to a high perplexity, where each of the twelve pitch classes would be equally likely to appear -- if asked to guess the pitch class of a particular note in the passage, the distribution would do a pretty (in fact, maximally) poor job.  The distribution for a passage consisting of a single pitch class would have a very low perplexity, indicating that the distribution could predict a particular note in the passage with extremely high certainty; if the passage's pitch-class distribution consisted of $100 \%$ $C$ and $0 \%$ for every other pitch class, it would be maximally ordered and perfectly predictive over the passage.
@@ -361,16 +403,34 @@ PP = 2^{H(p)} = 2^{-\sum_{x} p(x) \log_2 p(x)}
 \end{equation}
 The summation here takes each possible value $x$ (in the pitch-class case, there are 12) and adds up the sum of the value's probability $p(x)$ times the logarithm of its probability $\log_2 p(x)$.  In the flat-distributional case where each of the 12 pitch classes is equally likely, this reduces to the maximum perplexity of a key profile:
 \begin{align*}
-PP &= 2^{-\big(\frac{1}{12} \log_2 \frac{1}{12} + \frac{1}{12} \log_2 \frac{1/12} + ...\big)} \\
+PP &= 2^{-\big(\frac{1}{12} \log_2 \frac{1}{12} + \frac{1}{12} \log_2 \frac{1}{12} + ...\big)} \\
  &= 2^{-12\big(\frac{1}{12} \log_2 \frac{1}{12}\big)} \\
  &= 2^{-\log_2 \frac{1}{12}} = 2^{\log_2 12} = 12
 \end{align*}
 Heuristically, perplexity tells us that the model is like the roll of a $PP$-sided die; in the flat-distributional case, predicting a single pitch would be literally equivalent to rolling a fair 12-sided die.  At the other extreme, a minimally-perplexed probability distribution containing a single pitch class with $100\%$ probability has a perplexity of 1 -- its predictions are like rolling a single-sided die.
 
-To match a given passage's pitch-class probability distribution perplexity to that of a key profile, I calculated that the Bellman-Budge profile yields a perplexity of approximately 8.1 -- similar to that of rolling an 8-sided die.\footnote{Other profiles yield very similar perplexities.  For example, I generated pitch-class profiles for each tune head in the corpus, assembling statistics based on hand-annotated keys in order to produce a ``YJaMP key profile."  The resulting vector hewed fairly closely to Bellman-Budge, both in terms of its perplexity and the distribution's overall shape.  For code details, see jazzKey.py at \href{github.com/andrewdjones/YJaMP_Analysis}{github.com/andrewdjones/YJaMP\_Analysis}.}  Whichever segmentation window size produces probability distributions with perplexities closest to that value is likely the most appropriate for each recording.  The duration of these windows ranges from a couple of seconds in fast tunes to 30 seconds or more in ballads.
+To match a given passage's pitch-class probability distribution perplexity to that of a key profile, I note that the Bellman-Budge profile yields a perplexity of approximately 8.1 -- similar to that of rolling an 8-sided die.\footnote{Other profiles yield very similar perplexities.  For example, I generated pitch-class profiles for each tune head in the corpus, assembling statistics based on hand-annotated keys in order to produce a ``YJaMP key profile."  The resulting vector hewed fairly closely to Bellman-Budge, both in terms of its perplexity and the distribution's overall shape.  For code details, see jazzKey.py at \href{github.com/andrewdjones/YJaMP_Analysis}{github.com/andrewdjones/YJaMP\_Analysis}.}  Whichever segmentation window size produces probability distributions with perplexities closest to that value is likely the most appropriate for each recording.  The duration of these windows ranges from a couple of seconds in fast tunes to 30 seconds or more in ballads.
 
 %sliding and cosine optimization
-Optimizing the resulting choice of key for each window proceeds in two steps.  First, the key-finding algorithm segments a window of the perplexity-calculated duration and compares its pitch-class distribution to the Bellman-Budge profiles.  I assume that key-to-key variance in profiles is small, so the algorithm sees the same major mode profile and minor mode profile for each possible tonic.  It then choose whichever Bellman-Budge transposition minimizes the cosine distance between it and the window's distribution.  The cosine distance measures the directional alignment of the two twelve-dimensional vectors, discounting their magnitude; this encodes the notion that the absolute frequencies of appearance for pitch classes in the window and profile matter less than their proportional relation to one another.\footnote{Formally, the cosine distance $\cos(\theta)$ between two pitch class vectors $\mathbf{p_1}$ and $\mathbf{p_2}$ is $\cos(\theta) = \frac{\mathbf{p_1} \cdot \mathbf{p_2}}{\| \mathbf{p_1} \| \| \mathbf{p_2} \|}$, the dot product of the vectors divided by the product of their magnitudes.  This approach is similar to but distinct from the Euclidean metric advocated in Albrecht \& Shanahan 2013.}  Second, following White and Quinn 2016, the key-finder slides the window through the composition by a small durational increment and re-calculates the best-fit key at each step.  I set the small sliding increment with perplexity statistics.  At very short window sizes (ca. 50ms), the average perplexity for a given performance levels out at approximately the average number of pitches sounding at any given moment; for each recorded track, there is some slightly larger window size at which the average perplexity begins to increase over this baseline level significantly.  The time scale at which average window perplexity first increases by $30\%$ over its short-duration (ca. 50ms) value sets the sliding increment for the segmented windows.
+Optimizing the resulting choice of key for each window proceeds in two steps.  First, the key-finding algorithm segments a window of the perplexity-calculated duration and compares its pitch-class distribution to the Bellman-Budge profiles.  I assume that key-to-key variance in profiles is small, so the algorithm sees the same major mode profile and minor mode profile for each possible tonic.  It then choose whichever Bellman-Budge transposition minimizes the cosine distance between it and the window's distribution.  The cosine distance measures the directional alignment of the two twelve-dimensional vectors, discounting their magnitude; this encodes the notion that the absolute frequencies of appearance for pitch classes in the window and profile matter less than their proportional relation to one another.\footnote{Formally, the cosine distance $\cos(\theta)$ between two pitch class vectors $\mathbf{p_1}$ and $\mathbf{p_2}$ is $\cos(\theta) = \frac{\mathbf{p_1} \cdot \mathbf{p_2}}{\| \mathbf{p_1} \| \| \mathbf{p_2} \|}$, the dot product of the vectors divided by the product of their magnitudes.  This approach is similar to but distinct from the Euclidean metric advocated in Albrecht \& Shanahan 2013.}  Second, following White and Quinn 2016, the key-finder slides the window through the composition by a small durational increment and re-calculates the best-fit key at each step.
+
+%Sliding, interonsets, and chord temporal stability
+Setting this sliding increment impacts both the rate at which the algorithm produces key changes and, more subtly, the ontology in which chords are embedded.  Generally speaking, key assignments change as new pitch classes modify the locally-windowed distribution, and the window sliding increment represents the shortest possible time scale over which the algorithmic agent looks for such changes.  But short-duration, absolute time sliding increments also challenge the temporal stability of chord objects, since the limiting case (say, an increment of 1ms) might well separate pitches we (or an algorithm) might otherwise count as part of the same ``chord" into several different windows.  As a consequence of YJaMP's MIDI encoding, the temporal quantization performed by printed scores never aligns near-simultaneities into exact verticalities -- so the choice of what to call a ``chord" must be made on temporal and distributional grounds.
+
+%Describe inter-onset plot
+Figure~\ref{io_plot} plots inter-onset times between the individual pitches of the YJaMP corpus.  Taken directly from the MIDI onset times for each piano key struck, this plot displays how many note-to-note inter-onsets appear in the corpus for a range of possible times stretching from 0ms up to 500ms.  Toward the far right of the figure, an inter-onset time of 450ms indicates a comparatively long gap between two key strikes, while inter-onsets toward the left of the figure indicate nearly simultaneous strikes.  Since the MIDI piano setup loses accuracy below about 5ms, the erratic behavior of the plotted distribution between 0-10ms should be taken with a grain of salt.  At spans above 10ms, however, a relatively smooth distribution emerges, where a very large number of inter-onsets at short times decreases rapidly to a local minimum around 50-60ms.  At durations longer than this scale, the number of inter-onsets displays a slight increase; it only returns to the 50-60ms local minimum around 200ms, after which the long tail tapers off.
+
+I note that this distribution intuitively matches what we might expect from superimposing two separate distributions -- one chi-squared like (for $k=1$), with a maximum at $t=0$ms, and one normal or Gaussian-like, with a mean around $t=130$ms.  The populations represented by the two distributions might then map onto the temporal behavior expected of intra-chord inter-onsets, like fast melodic runs or pitches rolled but struck nearly simultaneously, and inter-chord onsets, as when one roughly simultaneous chord sounds some temporal delay after another.  To posit Figure~\ref{io_plot} as arising from the statistics of two different populations is to enunciate an ontological framing for chords: under such a description, chords consist of sets of pitches struck very close to one another (that is, within about 50ms) which tend to be separated from one another by 50-200ms.  Chords might be thought to ``stabilize," temporally speaking, around 50ms.\footnote{Empiricists and interpreters alike tend to locate the shortest span for human auditory attention in this regime; see London 2012, who cites 100ms (p.\ 28) and Chion 2016 (p. 24), who cites 40ms.  Note that neither kind of analyst does so on the basis described here.}  As a result, the shortest-duration objects the algorithms of Chapters 3 and 4 tally as ``chords" are the contents of 50ms time windows.
+
+\begin{figure}
+	\centering
+	\caption{A plot of note inter-onsets versus time for pitches in the YJaMP corpus.  Two types of behavior appear: decreasing counts as time increases, for very short times, and increased counts between 50ms and 200ms.  Below about 5ms, the MIDI piano's accuracy becomes erratic and suspect.}
+	\label{io_plot}
+	\includegraphics[width=5.9in]{io_plot.png}
+\end{figure}
+
+%sliding increment from perplexity change
+The status of the 50ms inter-onsets also has ramifications for window perplexity. At very short window sizes (below 50ms), the average perplexity across all windows in a given performance levels out at approximately the average number of pitches sounding at any given moment.  For each recorded track, there is then some slightly larger window size at which the average perplexity begins to increase over this baseline level.  The time scale at which average window perplexity first increases by $30\%$ over its short-duration (ca.\ 50ms) value sets the sliding increment for the segmented windows in the key-finding algorithm.  We might think of this sliding increment, which varies from track to track, as the shortest time scale at which chords might be expected to change at the track's performance tempo. 
 
 %confidence
 As a result, each ``chord" in a tune ends up in several possible windows of the same duration.  Since the key-finding algorithm assigns a best-fit key for each window, each chord may have several different possible key assignments.  To disambiguate, the algorithm employs a confidence measure: the degree to which a given key assignment outperforms the model's next-best guess.  Since the predicted key for a window corresponds to the minimum cosine distance ($d_1$) between the window's distribution and the possible key profiles, the model's next-best guess is the key with the second-shortest distance ($d_2$).  One measure for the confidence of the model's guess is then $1 - d_1/d_2$, which approaches 1 when the best guess is very close to the window distribution and the second-best is very far.  If no windows containing a particular chord have confidences higher than $30\%$, I mark the key as ambiguous; otherwise, the key-finder tags the chord with the local key from the window yielding the highest confidence value.
@@ -381,14 +441,37 @@ It is worth asking whether this ``key" assignment really says the same thing as 
 I do not claim that each key assigned to a passage by the algorithm corresponds to the kind of key object a human would assign, but rather that the automated key assignments afford certain kinds of indexical inquiry.  If a human analyst assigns a key to a passage by noticing what appears to be a $V-I$ progression, the resulting representation of the data already encodes chord-behavioral assumptions grounded in the way the agent turns signed indices into key interpretants.  This is excellent for the accuracy of key identification, but it introduces potential circularity if the analyst then tries to determine what harmonic progressions occurred in the passage.  When an analyst states that $V-I$ has an important progression status in any given key, the claim reflects both the properties of the key category and the response to indices by which it is observed and assigned.  If an algorithmic agent of the kind above can be made to say that $V-I$ has an important progression status in any given key, the claim rests on a different semiotic structure -- with no \emph{a priori} knowledge about what kinds of progression index a key, key profile-tagged corpora can provide an important ground for claims regarding tonal syntactic progressions.
 
 %set up transposition to scale degree sets
-With these keys in hand, chapters 3 and 4 pursue inquiry of this type.  To isolate syntactic progressions relative to some local key, the key-finding algorithm assigns keys to each chord in the music and converts all pitch-class sets into local, chromatic \emph{scale-degree sets}.  Each scale-degree set consists of the semitonal pitch-class set data transposed relative to the local key.  Relative to the local tonic (set as chromatic scale degree 0), Figure~\ref{sds} shows the most frequent scale-degree sets of cardinality 4 or greater found in YJaMP.
+With these keys in hand, chapters 3 and 4 pursue inquiry of this type.  To isolate syntactic progressions relative to some local key, the key-finding algorithm assigns keys to each chord in the music and converts all pitch-class sets into local, chromatic \emph{scale-degree sets}.  Each scale-degree set consists of the semitonal pitch-class set data transposed relative to the local key.  Relative to the local tonic (set as chromatic scale degree 0), Table~\ref{sds} shows the most frequent scale-degree sets of cardinality 4 or greater found in YJaMP.
 
-\begin{figure}%[h]
-	\centering
-	\caption{The most common locally-transposed scale-degree sets in the YJaMP corpus with cardinalities larger than 3.}
-	\includegraphics[width=3.5in]{sds.png}
-	\label{sds}
-\end{figure}
+\begin{table}
+\caption{The most common locally-transposed scale-degree sets in the YJaMP corpus with cardinalities larger than 3.}
+  \centering
+\begin{tabular}{l | l | l}
+\hline\hline
+Scale-degree set & Counts & Potential interpretation \\ [0.5ex]
+\hline
+$[0, 4, 7, 11]$ &	2783	& $I^7$ \\
+$[0, 4, 5, 9]$ &	2217	& $IV^7$\\
+$[2, 4, 7, 11]$ &	2110	& $iii^7$\\
+$[0, 2, 4, 7]$ &	1924	&\\
+$[0, 2, 5, 7]$ &	1878	&\\
+$[0, 3, 7, 8]$ &	1804	& $\flat VI^7$\\
+$[0, 4, 7, 9]$ &	1712	& $vi^7$\\
+$[0, 2, 5, 9]$ &	1659	& $ii^7$\\
+$[0, 5, 7, 9]$ &	1253	&\\
+$[0, 3, 5, 7]$ &	1252	&\\
+$[0, 2, 7, 9]$ &	1238	&\\
+$[0, 2, 4, 7, 11]$ &	1165 &	$I^9$\\
+$[0, 2, 7, 8]$ &	1128	&\\
+$[0, 2, 7, 11]$ &	1114	&\\
+$[2, 5, 7, 11]$ &	1105	& $V^7$\\
+$[0, 4, 5, 7, 9]$ &	1093	& $IV^9$\\
+$[2, 4, 7, 9]$ &	1055	&\\
+$[2, 7, 9, 11]$ &	1009	& $V$ add \nth{9}\\[1ex]	 
+\hline
+\end{tabular}
+\label{sds}
+\end{table}
 
 This seemingly-unremarkable list makes no assumptions about chord structure, consonance, or voice-leading.  Dissonant clusters are treated exactly the same as stacks of perfect fifths, pentatonic scales, and seventh chords.  No reduction of non-harmonic tones has been employed.  Nevertheless, scale-degree sets corresponding to $I^7$, the local tonic, constitute the most frequent four-note scale-degree sets in the corpus, and minor, major, and dominant seventh chords on scale degrees strongly predicted by traditional syntactic theories all appear high on the list.  As these chords were not known to the algorithmic agent making the key assignments, we might take their appearance here as confirmation that human analysts are right to connect chord progressions and keys.  Chapter 3 uses $ii$ chords to introduce methods for examining the temporal progression properties of scale-degree sets, and Chapter 4 provides methods for grouping scale-degree sets into categories based on similarities in their progression statistics.  Both of these modes of analysis rest on the particular nature of these scale-degree sets -- this particular method of turning the YJaMP recordings into harmonic objects.  Just as the first half of this chapter used algorithmically-produced voicing objects to both complicate and lend support to jazz theoretical interpretants, the following chapters will treat scale-degree set objects as signed indices in an attempt to reproduce and expand traditional statements regarding syntactic progressions.  Many object-ifications of a performance corpus are possible, but the one presented here affords a particular alignment between computational semiotic processes and human-analytical ones.
 	
