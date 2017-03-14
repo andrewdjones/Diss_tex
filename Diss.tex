@@ -3,6 +3,7 @@
 \usepackage[top=1in, bottom=1in, left=1.5in, right=1in]{geometry}
 \usepackage{hyperref}
 
+%set up the complex citation style I prefer
 \usepackage[citestyle=verbose-ibid, bibstyle=authoryear, backend=bibtex, labeldate=year]{biblatex}
 \DeclareNameAlias{default}{last-first}
 \renewbibmacro*{cite:short}{%
@@ -13,37 +14,29 @@
     {\printtext[parens]{\printtext[bibhyperlink]{%
        \printfield{labelyear}%
        \printfield{extrayear}}}}}
-
-
-
-%\usepackage[
-%backend=bibtex,
-%style=alphabetic,
-%citestyle=verbose-ibid 
-%]{biblatex}
 \addbibresource{Diss_bib.bib}
+
+%choose the page style and roughly double spacing
 \pagestyle{plain}
 \linespread{1.7}
 \makeindex
 %\oddsidemargin  0.0in \textwidth      6.5in
 
-%TODO: re-fit table widths to handle 1.5L x 1R margin (6in width)
-
 \begin{document}
-%750-word abstract has to go here, PRECEDING title page
-\include{Diss_Abstract}
+\setcounter{page}{1}
+\pagenumbering{roman}
+\include{Diss_Abstract}%750-word abstract has to go here, PRECEDING title page
 \newpage
 
-%Still need to do some funny business to get all the mandated crap on the title page
+%mandated title page formatting
 \titlepage
-%\date{\vspace{-2in}}%is this functional?
+\addtocounter{page}{3}
 
 \vspace{1in}
 
 \centerline{ \large Harmony and Statistical Temporality:}
 
 \centerline{ \large Toward Jazz Syntax from Corpus Analytics}
-%\maketitle
 
 \vspace{3.5in}
 
@@ -75,23 +68,41 @@ Dissertation Directors: Brian Kane and Ian Quinn
 May 2017
 
 }
-\setcounter{page}{1}
-\pagenumbering{roman}
+
+\newpage
+
+%mandated copyright notice
+\vspace{2.5in}
+
+\centerline{\copyright 2017 by Andrew Daniel Jones}
+
+\centerline{All rights reserved.}
+
+
+\newpage
+
+%lists
 \tableofcontents
 \newpage
+{\setstretch{1.0}
 \listoffigures
 \newpage
-%\listoftables
-%\newpage
-%\newcommand{\mathsym}[1]{{}}
-%\newcommand{\unicode}{{}}
+\listoftables
+\newpage
+}
+
+%chapters
+\include{diss_acknowledgments}%still roman page numbering
+
 \setcounter{page}{1}
-\pagenumbering{arabic}
+\pagenumbering{arabic}%switch to arabic numbering
+
 \include{diss1}%intro, syntax, literature, contra-L&J, setting the stage
-\include{diss_ch_obj}%Chapter 2, on objects, needs a LOT.  Consider Kockelman here, alongside extensive descripton of my key-finding and parsing methods?  (That has to go somewhere, and here seems like the only place)
-\include{diss3}%this is the progressions chapter (based mostly on the ii case study)
-\include{diss4}%this is the bootstrapping progression categories/clustering metrics chapter
+\include{diss_ch_obj}%Chapter 2, on voicing and sds objects, Kockelman, key-finding
+\include{diss3}%progressions chapter (based mostly on the ii case study)
+\include{diss4}%bootstrapping progression categories/clustering metrics chapter
 \include{Diss_conclusion}%general (Wollheimian) critique of formalism, description of how my methods escape the critique, affordances and possibilities for syntactic theories like mine
+
 %\printindex
 %\bibliography{Diss_bib}
 %\bibliographystyle{apalike}
